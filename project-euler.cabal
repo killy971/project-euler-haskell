@@ -1,0 +1,30 @@
+name:                project-euler
+version:             0.1.0.0
+synopsis:            Solutions to Project Euler problems.
+license:             BSD3
+license-file:        LICENSE
+author:              Guillaume Nargeot
+maintainer:          guillaume@nargeot.com
+copyright:           (c) Guillaume Nargeot 2013
+category:            Algorithms
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type: git
+  location: git://github.com/guillaume-nargeot/project-euler-haskell.git
+
+library
+  build-depends: base
+
+executable problem-001
+  hs-source-dirs:      src
+  main-is:             Problem001.hs
+  build-depends:       base
+  ghc-options:         -Wall -O3
+
+executable problem-002
+  hs-source-dirs:      src
+  main-is:             Problem002.hs
+  build-depends:       base
+  ghc-options:         -Wall -O3
