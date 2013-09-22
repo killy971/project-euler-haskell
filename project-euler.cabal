@@ -26,6 +26,12 @@ executable problem-002
   build-depends:       base
   ghc-options:         -Wall -O3
 
+executable problem-009
+  hs-source-dirs:      src
+  main-is:             Problem009.hs
+  build-depends:       base
+  ghc-options:         -Wall -O3
+
 executable problem-010
   hs-source-dirs:      src
   main-is:             Problem010.hs
