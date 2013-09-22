@@ -14,9 +14,6 @@ source-repository head
   type: git
   location: git://github.com/guillaume-nargeot/project-euler-haskell.git
 
-library
-  build-depends: base, primes
-
 executable problem-001
   hs-source-dirs:      src
   main-is:             Problem001.hs
@@ -46,6 +43,12 @@ executable problem-025
   main-is:             Problem025.hs
   build-depends:       base
   ghc-options:         -Wall -O3
+
+executable problem-041
+  hs-source-dirs:      src
+  main-is:             Problem041.hs
+  build-depends:       base, digits, primes
+  ghc-options:         -W -O3
 
 executable problem-072
   hs-source-dirs:      src
