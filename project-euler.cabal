@@ -50,6 +50,12 @@ executable problem-025
   build-depends:       base
   ghc-options:         -Wall -O3
 
+executable problem-034
+  hs-source-dirs:      src
+  main-is:             Problem034.hs
+  build-depends:       base, digits, memoize
+  ghc-options:         -Wall -O3
+
 executable problem-041
   hs-source-dirs:      src
   main-is:             Problem041.hs
