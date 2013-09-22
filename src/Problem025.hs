@@ -15,5 +15,4 @@ solution = case findIndex hasThousandDigits fibs of
 	Nothing    -> -1
 
 main :: IO ()
-main = do
-	print solution
+main = do print solution
