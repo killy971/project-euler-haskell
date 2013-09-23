@@ -2,6 +2,9 @@ module Util where
 
 import Data.List (delete)
 
+sq :: Integer -> Integer
+sq x = x * x
+
 fact :: (Enum a, Num a) => a -> a
 fact n = product [1..n]
 
