@@ -38,6 +38,12 @@ executable problem-010
   build-depends:       base, primes
   ghc-options:         -Wall -O3
 
+executable problem-012
+  hs-source-dirs:      src
+  main-is:             Problem012.hs
+  build-depends:       base
+  ghc-options:         -W -O3
+
 executable problem-014
   hs-source-dirs:      src
   main-is:             Problem014.hs
