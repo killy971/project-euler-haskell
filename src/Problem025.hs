@@ -4,7 +4,7 @@ import Util
 import Data.List
 
 digitsCount :: Show a => a -> Int
-digitsCount x = length $ show x
+digitsCount = length . show
 
 hasThousandDigits :: Show a => a -> Bool
 hasThousandDigits x = digitsCount x == 1000

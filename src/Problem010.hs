@@ -3,7 +3,7 @@ module Main where
 import Data.Numbers.Primes
 
 genericSolution :: Integer -> Integer
-genericSolution n = sum (takeWhile (< n) primes)
+genericSolution n = sum $ takeWhile (< n) primes
 
 solution :: Integer
 solution = genericSolution 2000000

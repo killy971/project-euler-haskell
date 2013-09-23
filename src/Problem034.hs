@@ -8,10 +8,10 @@ mFact :: Integer -> Integer
 mFact = memoize fact
 
 equalToSumOfDigitsFactorials :: Integer -> Bool
-equalToSumOfDigitsFactorials n = n == sum (map mFact (digits 10 n))
+equalToSumOfDigitsFactorials n = n == sum (map mFact $ digits 10 n)
 
 genericSolution :: Integer -> Integer
-genericSolution limit = sum (filter equalToSumOfDigitsFactorials [10..limit])
+genericSolution limit = sum $ filter equalToSumOfDigitsFactorials [10..limit]
 
 solution :: Integer
 solution = genericSolution 100000
