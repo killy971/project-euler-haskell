@@ -14,7 +14,6 @@ collatzLength start = collatzLength' start 2
 			then result
 			else collatzLength' (next n) (result + 1)
 
--- TODO fix findIndexBy terminal recursion
 solution :: Integer
 solution = 1 + findIndexBy (>) (map collatzLength [1..1000000])
 

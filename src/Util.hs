@@ -16,9 +16,9 @@ findIndexBy _ [] = error "Util.findIndexBy: empty list"
 findIndexBy f (x:xs) = findIndexBy' xs x 1 0
 	where 
 		findIndexBy' [] _ _ i = i
-		findIndexBy' (x:xs) y xi yi = xi `seq` if f x y
-			then findIndexBy' xs x (xi + 1) xi
-			else findIndexBy' xs y (xi + 1) yi
+		findIndexBy' (y:ys) z yi zi = yi `seq` if f y z
+			then findIndexBy' ys y (yi + 1) yi
+			else findIndexBy' ys z (yi + 1) zi
 
 sortedPermutations :: Eq a => [a] -> [[a]]
 sortedPermutations [] = [[]]
