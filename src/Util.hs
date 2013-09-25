@@ -6,7 +6,7 @@ sq :: Integer -> Integer
 sq x = x * x
 
 fact :: (Enum a, Num a) => a -> a
-fact n = product [1..n]
+fact = product . enumFromTo 1
 
 fibs :: [Integer]
 fibs = 0 : scanl (+) 1 fibs

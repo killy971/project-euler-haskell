@@ -7,7 +7,7 @@ digitsCount :: Show a => a -> Int
 digitsCount = length . show
 
 hasThousandDigits :: Show a => a -> Bool
-hasThousandDigits x = digitsCount x == 1000
+hasThousandDigits = (== 1000) . digitsCount
 
 solution :: Int
 solution = case findIndex hasThousandDigits fibs of

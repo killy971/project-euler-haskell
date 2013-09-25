@@ -4,7 +4,7 @@ import Data.Digits
 import Util
 
 digitsSquareSum :: Integer -> Integer
-digitsSquareSum x = sum $ map sq (digits 10 x)
+digitsSquareSum = sum . map sq . digits 10
 
 chainEndsWith :: Integer -> Integer
 chainEndsWith x =
@@ -14,7 +14,7 @@ chainEndsWith x =
 			else chainEndsWith next
 
 genericSolution :: Integer-> Int
-genericSolution limit = length $ filter (== 89) (map chainEndsWith [1..limit])
+genericSolution = length . filter (== 89) . map chainEndsWith . enumFromTo 1
 
 solution :: Int
 solution = genericSolution 10000000

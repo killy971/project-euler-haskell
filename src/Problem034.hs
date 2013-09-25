@@ -11,7 +11,7 @@ equalToSumOfDigitsFactorials :: Integer -> Bool
 equalToSumOfDigitsFactorials n = n == sum (map mFact $ digits 10 n)
 
 genericSolution :: Integer -> Integer
-genericSolution limit = sum $ filter equalToSumOfDigitsFactorials [10..limit]
+genericSolution = sum . filter equalToSumOfDigitsFactorials . enumFromTo 10
 
 solution :: Integer
 solution = genericSolution 100000
