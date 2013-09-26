@@ -14,7 +14,7 @@ intPrimes = map fromIntegral primes
 
 -- no need to include leading 9 and 8 as they cannot form prime numbers
 solution :: Int
-solution = last $ filter pandigital $ takeWhile (<= 7654321) intPrimes
+solution = (last . filter pandigital . takeWhile (<= 7654321)) intPrimes
 
 main :: IO ()
 main = do print solution

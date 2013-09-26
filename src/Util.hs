@@ -2,6 +2,9 @@ module Util where
 
 import Data.List (delete)
 
+ints :: (Enum t, Num t) => [t]
+ints = [1..]
+
 sq :: Integer -> Integer
 sq x = x * x
 

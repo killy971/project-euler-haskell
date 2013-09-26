@@ -1,9 +1,10 @@
 module Main where
 
+import Control.Monad
 import Math.Sieve.Phi
 
 genericSolution :: Integer -> Integer
-genericSolution n = sum $ map (phi $ sieve n) [2..n]
+genericSolution = sum . ap (map . phi . sieve) (enumFromTo 2)
 
 solution :: Integer
 solution = genericSolution 1000000
