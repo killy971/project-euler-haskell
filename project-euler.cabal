@@ -92,6 +92,12 @@ executable problem-052
   build-depends:       base, digits
   ghc-options:         -Wall -O3
 
+executable problem-055
+  hs-source-dirs:      src
+  main-is:             Problem055.hs
+  build-depends:       base, digits
+  ghc-options:         -Wall -O3
+
 executable problem-065
   hs-source-dirs:      src
   main-is:             Problem065.hs
