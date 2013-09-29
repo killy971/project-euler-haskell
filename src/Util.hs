@@ -42,6 +42,9 @@ interleave3 xs [] zs = interleave2 xs zs
 interleave3 [] ys zs = interleave2 ys zs
 interleave3 (x:xs) (y:ys) (z:zs) = x : y : z : interleave3 xs ys zs
 
+isPalindrome :: Eq a => [a] -> Bool
+isPalindrome xs = xs == reverse xs
+
 findIndexBy :: (Ord a) => (a -> a -> Bool) -> [a] -> Integer
 findIndexBy _ [] = error "Util.findIndexBy: empty list"
 findIndexBy f (x:xs) = findIndexBy' xs x 1 0
