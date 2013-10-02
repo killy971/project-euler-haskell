@@ -5,7 +5,7 @@ import Data.Ratio
 import Util
 
 eCF :: [Integer]
-eCF = 2 : 1 : interleave3 (iterate (+ 2) 2) (repeat 1) (repeat 1)
+eCF = 2 : 1 : interleave [iterate (+ 2) 2, repeat 1, repeat 1]
 
 eConvergent :: Int -> [Integer]
 eConvergent = flip take eCF

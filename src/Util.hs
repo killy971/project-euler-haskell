@@ -1,6 +1,6 @@
 module Util where
 
-import Data.List (delete)
+import Data.List (delete, transpose)
 import Data.Ratio
 
 ints :: (Enum t, Num t) => [t]
@@ -31,16 +31,8 @@ fact = product . enumFromTo 1
 fibs :: [Integer]
 fibs = 0 : scanl (+) 1 fibs
 
-interleave2 :: [a] -> [a] -> [a]
-interleave2 xs [] = xs
-interleave2 [] ys = ys
-interleave2 (x:xs) (y:ys) = x : y : interleave2 xs ys
-
-interleave3 :: [a] -> [a] -> [a] -> [a]
-interleave3 xs ys [] = interleave2 xs ys
-interleave3 xs [] zs = interleave2 xs zs
-interleave3 [] ys zs = interleave2 ys zs
-interleave3 (x:xs) (y:ys) (z:zs) = x : y : z : interleave3 xs ys zs
+interleave :: [[a]] -> [a]
+interleave = concat . transpose
 
 isPalindrome :: Eq a => [a] -> Bool
 isPalindrome xs = xs == reverse xs
