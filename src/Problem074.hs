@@ -9,9 +9,9 @@ takeWhileUniq :: Ord a => [a] -> [a]
 takeWhileUniq [] = []
 takeWhileUniq (x:xs) = x : takeWhileUniq' (Set.singleton x) xs
     where takeWhileUniq' _ [] = []
-          takeWhileUniq' set (x:xs) = if Set.member x set
+          takeWhileUniq' set (y:ys) = if Set.member y set
               then []
-              else x : takeWhileUniq' (Set.insert x set) xs
+              else y : takeWhileUniq' (Set.insert y set) ys
 
 mFact :: Integer -> Integer
 mFact = memoize fact
