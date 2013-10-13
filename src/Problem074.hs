@@ -17,10 +17,13 @@ mFact :: Integer -> Integer
 mFact = memoize fact
 
 digitsFactSum :: Integer -> Integer
-digitsFactSum = memoize sum . map mFact . digits 10
+digitsFactSum = sum . map mFact . digits 10
+
+mDigitsFactSum :: Integer -> Integer
+mDigitsFactSum = memoize digitsFactSum
 
 dfsChain :: Integer -> [Integer]
-dfsChain n = n : takeWhile (/= n) (tail (iterate digitsFactSum n))
+dfsChain n = n : takeWhile (/= n) (tail (iterate mDigitsFactSum n))
 
 dfsChainLength :: Integer -> Int
 dfsChainLength = length . takeWhileUniq . dfsChain
