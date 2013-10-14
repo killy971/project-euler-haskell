@@ -23,7 +23,7 @@ mDigitsFactSum :: Integer -> Integer
 mDigitsFactSum = memoize digitsFactSum
 
 dfsChain :: Integer -> [Integer]
-dfsChain n = n : takeWhile (/= n) (tail (iterate mDigitsFactSum n))
+dfsChain n = n : takeWhile (/= n) (tail $ iterate mDigitsFactSum n)
 
 dfsChainLength :: Integer -> Int
 dfsChainLength = length . takeWhileUniq . dfsChain
