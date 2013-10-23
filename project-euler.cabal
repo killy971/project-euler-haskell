@@ -122,6 +122,12 @@ executable problem-072
   build-depends:       base, NumberSieves
   ghc-options:         -Wall -O3
 
+executable problem-073
+  hs-source-dirs:      src
+  main-is:             Problem073.hs
+  build-depends:       base
+  ghc-options:         -Wall -O3
+
 executable problem-074
   hs-source-dirs:      src
   main-is:             Problem074.hs
