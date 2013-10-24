@@ -140,3 +140,8 @@ executable problem-092
   build-depends:       base, digits
   ghc-options:         -Wall -O3
 
+executable problem-214
+  hs-source-dirs:      src
+  main-is:             Problem214.hs
+  build-depends:       base, NumberSieves, primes
+  ghc-options:         -Wall -O3

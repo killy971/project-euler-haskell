@@ -37,6 +37,11 @@ interleave = concat . transpose
 isPalindrome :: Eq a => [a] -> Bool
 isPalindrome xs = xs == reverse xs
 
+takeUntil :: (a -> Bool) -> [a] -> [a]
+takeUntil _ [] = []
+takeUntil p (x:xs) | p x = [x] 
+                   | otherwise = x : takeUntil p xs
+
 findIndexBy :: (Ord a) => (a -> a -> Bool) -> [a] -> Integer
 findIndexBy _ [] = error "Util.findIndexBy: empty list"
 findIndexBy f (x:xs) = findIndexBy' xs x 1 0
