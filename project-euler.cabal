@@ -86,6 +86,12 @@ executable problem-041
   build-depends:       base, digits, primes
   ghc-options:         -W -O3
 
+executable problem-043
+  hs-source-dirs:      src
+  main-is:             Problem043.hs
+  build-depends:       base, digits
+  ghc-options:         -Wall -O3
+
 executable problem-052
   hs-source-dirs:      src
   main-is:             Problem052.hs
@@ -138,6 +144,12 @@ executable problem-092
   hs-source-dirs:      src
   main-is:             Problem092.hs
   build-depends:       base, digits
+  ghc-options:         -Wall -O3
+
+executable problem-128
+  hs-source-dirs:      src
+  main-is:             Problem128.hs
+  build-depends:       base
   ghc-options:         -Wall -O3
 
 executable problem-214

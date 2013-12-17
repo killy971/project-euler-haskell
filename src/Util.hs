@@ -40,6 +40,8 @@ interleave = concat . transpose
 isPalindrome :: Eq a => [a] -> Bool
 isPalindrome xs = xs == reverse xs
 
+-- Splits the list into overlapping clumps of n elements
+-- http://docs.factorcode.org/content/word-clump%2Cgrouping.html
 clump :: Int -> [a] -> [[a]]
 clump n = (fpow n init)  . map (take n) . tails
 
