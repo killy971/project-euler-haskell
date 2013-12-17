@@ -1,6 +1,6 @@
 module Util where
 
-import Data.List (delete, transpose)
+import Data.List (delete, tails, transpose)
 import Data.Ratio
 
 ints :: (Enum t, Num t) => [t]
@@ -8,6 +8,9 @@ ints = [1..]
 
 sq :: Integer -> Integer
 sq x = x * x
+
+fpow :: Int -> (a -> a) -> a -> a
+fpow n = foldr (.) id . replicate n
 
 ratioAdd :: Integral a => Ratio a -> Ratio a -> Ratio a
 ratioAdd x y =
@@ -36,6 +39,9 @@ interleave = concat . transpose
 
 isPalindrome :: Eq a => [a] -> Bool
 isPalindrome xs = xs == reverse xs
+
+clump :: Int -> [a] -> [[a]]
+clump n = (fpow n init)  . map (take n) . tails
 
 takeUntil :: (a -> Bool) -> [a] -> [a]
 takeUntil _ [] = []
