@@ -122,6 +122,12 @@ executable problem-065
   build-depends:       base, digits
   ghc-options:         -Wall -O3
 
+executable problem-070
+  hs-source-dirs:      src
+  main-is:             Problem070.hs
+  build-depends:       base, digits, NumberSieves
+  ghc-options:         -Wall -O3
+
 executable problem-071
   hs-source-dirs:      src
   main-is:             Problem071.hs
