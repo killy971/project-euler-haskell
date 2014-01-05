@@ -59,6 +59,10 @@ findIndexBy f (x:xs) = findIndexBy' xs x 1 0
 			then findIndexBy' ys y (yi + 1) yi
 			else findIndexBy' ys z (yi + 1) zi
 
+combinations :: Int -> [a] -> [[a]]
+combinations 0 _ = [[]]
+combinations m l = [x:ys | x:xs <- tails l, ys <- combinations (m-1) xs]
+
 sortedPermutations :: Eq a => [a] -> [[a]]
 sortedPermutations [] = [[]]
 sortedPermutations xs = [ x:ys | x <- xs, ys <- sortedPermutations (delete x xs)]
