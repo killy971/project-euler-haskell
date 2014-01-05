@@ -4,10 +4,8 @@ import Data.Numbers.Primes
 import Math.Sieve.Phi
 import Util
 
-memoizedSieve = sieve 40000000
-
 mPhi :: Integer -> Integer
-mPhi = phi memoizedSieve
+mPhi = phi (sieve 40000000)
 
 phiChain :: Integer -> [Integer]
 phiChain = takeUntil (== 1) . iterate mPhi
