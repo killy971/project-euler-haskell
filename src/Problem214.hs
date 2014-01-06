@@ -5,7 +5,7 @@ import Math.Sieve.Phi
 import Util
 
 mPhi :: Integer -> Integer
-mPhi = phi (sieve 40000000)
+mPhi = phi (sieve (40000000::Integer))
 
 phiChain :: Integer -> [Integer]
 phiChain = takeUntil (== 1) . iterate mPhi
