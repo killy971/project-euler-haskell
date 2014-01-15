@@ -5,7 +5,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Guillaume Nargeot
 maintainer:          guillaume@nargeot.com
-copyright:           (c) Guillaume Nargeot 2013
+copyright:           (c) Guillaume Nargeot 2014
 category:            Algorithms
 build-type:          Simple
 cabal-version:       >=1.8
@@ -13,6 +13,12 @@ cabal-version:       >=1.8
 source-repository head
   type: git
   location: git://github.com/guillaume-nargeot/project-euler-haskell.git
+
+-- test-suite test-all
+--   hs-source-dirs:      test
+--   type:                exitcode-stdio-1.0
+--   main-is:             TestAll.hs
+--   build-depends:       base, HUnit, Cabal >= 1.9.2
 
 executable problem-001
   hs-source-dirs:      src
@@ -66,6 +72,12 @@ executable problem-025
   hs-source-dirs:      src
   main-is:             Problem025.hs
   build-depends:       base
+  ghc-options:         -Wall -O3
+
+executable problem-033
+  hs-source-dirs:      src
+  main-is:             Problem033.hs
+  build-depends:       base, digits
   ghc-options:         -Wall -O3
 
 executable problem-034
@@ -158,11 +170,11 @@ executable problem-092
   build-depends:       base, digits
   ghc-options:         -Wall -O3
 
-executable problem-128
-  hs-source-dirs:      src
-  main-is:             Problem128.hs
-  build-depends:       base
-  ghc-options:         -Wall -O3
+-- executable problem-128
+--  hs-source-dirs:      src
+--  main-is:             Problem128.hs
+--  build-depends:       base
+--  ghc-options:         -Wall -O3
 
 executable problem-214
   hs-source-dirs:      src
