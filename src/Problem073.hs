@@ -16,7 +16,7 @@ countForDenominator :: Integer -> Integer
 countForDenominator d = countForDenominator' (startNumerator d) 0
     where countForDenominator' n count = if n > endNum
              then count
-             else countForDenominator' (n + 1) (if 1 == (gcd d n) then count + 1 else count)
+             else countForDenominator' (n + 1) (if 1 == gcd d n then count + 1 else count)
           endNum = endNumerator d
 
 genericSolution :: Integer -> Integer

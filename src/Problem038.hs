@@ -7,7 +7,7 @@ isPandigital :: [Integer] -> Bool
 isPandigital = (== [1..9]) . sort
 
 applyProperty :: Integer -> [Integer]
-applyProperty = take 9 . concat . map (digits 10) . flip map [1..9] . (*)
+applyProperty = take 9 . concatMap (digits 10) . flip map [1..9] . (*)
 
 genericSolution :: [Integer] -> Integer
 genericSolution = unDigits 10 . last . filter isPandigital . map applyProperty

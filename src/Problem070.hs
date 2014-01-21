@@ -13,7 +13,7 @@ nPhiSeq :: [Integer] -> [(Integer, Integer)]
 nPhiSeq = ap zip phiSeq
 
 equalByPermutation :: Integral a => (a, a) -> Bool
-equalByPermutation (x, y) = null $ (digits 10 x) \\ (digits 10 y)
+equalByPermutation (x, y) = null $ digits 10 x \\ digits 10 y
 
 minByRatio :: Integral a => (a, a) -> (a, a) -> (a, a)
 minByRatio (n1, p1) (n2, p2) = if n1 % p1 <= n2 % p2 then (n1, p1) else (n2, p2)
