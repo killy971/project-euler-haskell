@@ -23,4 +23,4 @@ solution :: Integer
 solution = genericSolution 100
 
 main :: IO ()
-main = do print solution
+main = print solution

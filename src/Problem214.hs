@@ -20,4 +20,4 @@ solution :: Integer
 solution = genericSolution $ takeWhile (<= 40000000) primes
 
 main :: IO ()
-main = do print solution
+main = print solution

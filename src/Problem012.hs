@@ -19,4 +19,4 @@ solution :: Integer
 solution = genericSolution 500
 
 main :: IO ()
-main = do print solution
+main = print solution

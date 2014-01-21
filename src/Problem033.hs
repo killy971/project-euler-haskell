@@ -9,4 +9,4 @@ solution033 :: Integer
 solution033 = denominator $ product $ reductibleFractions
 
 main :: IO ()
-main = do print solution033
+main = print solution033

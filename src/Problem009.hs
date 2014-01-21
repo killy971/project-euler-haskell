@@ -12,4 +12,4 @@ solution :: Integer
 solution = genericSolution 1 2 997 1000
 
 main :: IO ()
-main = do print solution
+main = print solution

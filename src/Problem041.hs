@@ -17,4 +17,4 @@ solution :: Int
 solution = (last . filter pandigital . takeWhile (<= 7654321)) intPrimes
 
 main :: IO ()
-main = do print solution
+main = print solution

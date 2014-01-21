@@ -18,4 +18,4 @@ solution :: Integer
 solution = 1 + findIndexBy (>) (map collatzLength [1..1000000])
 
 main :: IO ()
-main = do print solution
+main = print solution

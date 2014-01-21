@@ -11,4 +11,4 @@ solution031 :: Integer
 solution031 = combinations 200 [200, 100, 50, 20, 10, 5, 2, 1]
 
 main :: IO ()
-main = do print solution031
+main = print solution031

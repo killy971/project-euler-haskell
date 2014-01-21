@@ -19,4 +19,4 @@ solution :: Integer
 solution = sum $ map toInt $ filter subStringDivisibilityProperty (sortedPermutations [0..9])
 
 main :: IO ()
-main = do print solution
+main = print solution

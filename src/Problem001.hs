@@ -10,4 +10,4 @@ solution001 :: Integer
 solution001 = genericSolution001 1000
 
 main :: IO ()
-main = do print solution001
+main = print solution001

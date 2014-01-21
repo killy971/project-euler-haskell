@@ -15,4 +15,4 @@ solution :: Integer
 solution = (head . filter sameDigits) ints
 
 main :: IO ()
-main = do print solution
+main = print solution
