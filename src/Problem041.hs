@@ -6,8 +6,8 @@ import Data.Numbers.Primes
 
 pandigital :: Int -> Bool
 pandigital x =
-	let d = digits 10 x
-	in sort d == [1..(length d)]
+    let d = digits 10 x
+    in sort d == [1..(length d)]
 
 intPrimes :: [Int]
 intPrimes = map fromIntegral primes

@@ -8,10 +8,10 @@ digitsSquareSum = sum . map sq . digits 10
 
 chainEndsWith :: Integer -> Integer
 chainEndsWith x =
-	let next = digitsSquareSum x in
-		if next == 1 || next == 89
-			then next
-			else chainEndsWith next
+    let next = digitsSquareSum x in
+        if next == 1 || next == 89
+            then next
+            else chainEndsWith next
 
 genericSolution :: Integer-> Int
 genericSolution = length . filter (== 89) . map chainEndsWith . enumFromTo 1
