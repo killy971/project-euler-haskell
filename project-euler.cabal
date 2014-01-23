@@ -14,12 +14,6 @@ source-repository head
   type: git
   location: git://github.com/guillaume-nargeot/project-euler-haskell.git
 
--- test-suite test-all
---   hs-source-dirs:      test
---   type:                exitcode-stdio-1.0
---   main-is:             TestAll.hs
---   build-depends:       base, HUnit, Cabal >= 1.9.2
-
 executable problem-001
   hs-source-dirs:      src
   main-is:             Problem001.hs
@@ -182,14 +176,15 @@ executable problem-092
   build-depends:       base, digits
   ghc-options:         -Wall -Werror -O2
 
--- executable problem-128
---  hs-source-dirs:      src
---  main-is:             Problem128.hs
---  build-depends:       base
---  ghc-options:         -Wall -O2
-
 executable problem-214
   hs-source-dirs:      src
   main-is:             Problem214.hs
   build-depends:       base, NumberSieves, primes
   ghc-options:         -Wall -Werror -O2
+
+test-suite test-all
+  hs-source-dirs:      src, test
+  type:                exitcode-stdio-1.0
+  main-is:             TestAll.hs
+  build-depends:       base, HUnit, Cabal >= 1.9.2
+
