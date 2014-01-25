@@ -14,7 +14,7 @@ source-repository head
   type: git
   location: git://github.com/guillaume-nargeot/project-euler-haskell.git
 
-executable problem001
+executable problem-001
   hs-source-dirs:      src
   main-is:             Problem001.hs
   build-depends:       base
@@ -186,5 +186,5 @@ test-suite test-all
   hs-source-dirs:      src, test
   type:                exitcode-stdio-1.0
   main-is:             TestAll.hs
-  build-depends:       base, problem001, HUnit, Cabal >= 1.9.2
+  build-depends:       base, HUnit, Cabal >= 1.9.2
 
