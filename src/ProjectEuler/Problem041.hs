@@ -4,14 +4,11 @@ import Data.Digits
 import Data.List
 import Data.Numbers.Primes
 
-pandigital :: Int -> Bool
+pandigital :: Integer -> Bool
 pandigital x =
-    let d = digits 10 x
+    let d = digits 10 $ fromIntegral x
     in sort d == [1..(length d)]
 
-intPrimes :: [Int]
-intPrimes = map fromIntegral primes
-
 -- no need to include leading 9 and 8 as they cannot form prime numbers
-solution041 :: Int
-solution041 = last . filter pandigital . takeWhile (<= 7654321) $ intPrimes
+solution041 :: Integer
+solution041 = last . filter pandigital . takeWhile (<= 7654321) $ primes

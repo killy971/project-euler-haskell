@@ -50,6 +50,4 @@ test-suite test-all
   type:                exitcode-stdio-1.0
   main-is:             TestAll.hs
   build-depends:       base, containers, digits, memoize, primes, NumberSieves, HUnit, Cabal >= 1.9.2
-  ghc-options:         -Wall -O2
--- cannot used -Werror because of problems 012 and 041
-
+  ghc-options:         -Wall -Werror -O2

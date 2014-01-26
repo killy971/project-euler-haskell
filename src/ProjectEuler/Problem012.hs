@@ -7,7 +7,8 @@ isDivisor :: Integer -> Integer -> Bool
 isDivisor x d = rem x d == 0
 
 intSqrt :: Integer -> Integer
-intSqrt = floor . sqrt . fromIntegral
+intSqrt x = floor . sqrt $ d
+    where d = fromIntegral x :: Double
 
 divisorsCount :: Integer -> Integer
 divisorsCount x = fromIntegral . (* 2) . length $ filter (isDivisor x) [1..intSqrt x]
