@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem065 (solution065) where
 
 import Data.Digits
 import Data.Ratio
@@ -19,8 +19,5 @@ eFrac = foldl1 eFracAccFunc . map (% 1) . reverse . eConvergent
 genericSolution :: Int -> Integer
 genericSolution = sum . digits 10 . numerator . eFrac
 
-solution :: Integer
-solution = genericSolution 100
-
-main :: IO ()
-main = print solution
+solution065 :: Integer
+solution065 = genericSolution 100

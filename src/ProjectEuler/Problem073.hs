@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem073 (solution073) where
 
 startNumerator :: Integer -> Integer
 startNumerator d = if n > 3 * d
@@ -22,8 +22,5 @@ countForDenominator d = countForDenominator' (startNumerator d) 0
 genericSolution :: Integer -> Integer
 genericSolution = sum . map countForDenominator . enumFromTo 4
 
-solution :: Integer
-solution = genericSolution 12000
-
-main :: IO ()
-main = print solution
+solution073 :: Integer
+solution073 = genericSolution 12000

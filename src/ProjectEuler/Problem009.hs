@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem009 (solution009) where
 
 genericSolution :: Integer -> Integer -> Integer -> Integer -> Integer
 genericSolution a b c n
@@ -6,8 +6,5 @@ genericSolution a b c n
     | c < b = genericSolution (a + 1) (a + 2) (n - a - 3) n
     | otherwise = genericSolution a (b + 1) (n - a - b - 1) n
 
-solution :: Integer
-solution = genericSolution 1 2 997 1000
-
-main :: IO ()
-main = print solution
+solution009 :: Integer
+solution009 = genericSolution 1 2 997 1000

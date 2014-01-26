@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem074 (solution074) where
 
 import Data.Digits
 import Data.Function.Memoize
@@ -31,8 +31,5 @@ dfsChainLength = length . takeWhileUniq . dfsChain
 genericSolution :: Integer -> Int
 genericSolution = length . filter (== 60) . map dfsChainLength . enumFromTo 1
 
-solution :: Int
-solution = genericSolution 1000000
-
-main :: IO ()
-main = print solution
+solution074 :: Int
+solution074 = genericSolution 1000000

@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem070 (solution070) where
 
 import Control.Monad
 import Data.Digits
@@ -21,8 +21,5 @@ minByRatio (n1, p1) (n2, p2) = if n1 % p1 <= n2 % p2 then (n1, p1) else (n2, p2)
 genericSolution :: [Integer] -> Integer
 genericSolution = fst . foldl1 minByRatio . filter equalByPermutation . nPhiSeq
 
-solution :: Integer
-solution = genericSolution [2..10000000]
-
-main :: IO ()
-main = print solution
+solution070 :: Integer
+solution070 = genericSolution [2..10000000]

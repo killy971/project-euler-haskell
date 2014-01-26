@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem043 (solution043) where
 
 import Data.Digits
 import Util
@@ -15,8 +15,5 @@ isDivisor d x = rem x d == 0
 subStringDivisibilityProperty :: [Integer] -> Bool
 subStringDivisibilityProperty = and . zipWith isDivisor p . map (unDigits 10) . drop 1 . clump 3
 
-solution :: Integer
-solution = sum $ map toInt $ filter subStringDivisibilityProperty (sortedPermutations [0..9])
-
-main :: IO ()
-main = print solution
+solution043 :: Integer
+solution043 = sum $ map toInt $ filter subStringDivisibilityProperty (sortedPermutations [0..9])

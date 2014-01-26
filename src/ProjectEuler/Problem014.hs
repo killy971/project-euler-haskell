@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem014 (solution014) where
 
 import Util
 
@@ -13,8 +13,5 @@ collatzLength start = collatzLength' start 2
 		then result
 		else collatzLength' (next n) (result + 1)
 
-solution :: Integer
-solution = 1 + findIndexBy (>) (map collatzLength [1..1000000])
-
-main :: IO ()
-main = print solution
+solution014 :: Integer
+solution014 = 1 + findIndexBy (>) (map collatzLength [1..1000000])

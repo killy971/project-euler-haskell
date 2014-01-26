@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem031 (solution031) where
 
 combinations :: Integer -> [Integer] -> Integer
 combinations 0 _ = 1
@@ -9,6 +9,3 @@ combinations r (c:cs) = if r < 0
 
 solution031 :: Integer
 solution031 = combinations 200 [200, 100, 50, 20, 10, 5, 2, 1]
-
-main :: IO ()
-main = print solution031

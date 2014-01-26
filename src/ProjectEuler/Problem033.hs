@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem033 (solution033) where
 
 import Data.Ratio
 
@@ -7,6 +7,3 @@ reductibleFractions = [(10 * a + b) / (10 * b + c) | a <- [1..9], b <- [1..9], c
 
 solution033 :: Integer
 solution033 = denominator $ product reductibleFractions
-
-main :: IO ()
-main = print solution033

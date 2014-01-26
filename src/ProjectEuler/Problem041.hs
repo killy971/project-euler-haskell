@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem041 (solution041) where
 
 import Data.Digits
 import Data.List
@@ -13,8 +13,5 @@ intPrimes :: [Int]
 intPrimes = map fromIntegral primes
 
 -- no need to include leading 9 and 8 as they cannot form prime numbers
-solution :: Int
-solution = (last . filter pandigital . takeWhile (<= 7654321)) intPrimes
-
-main :: IO ()
-main = print solution
+solution041 :: Int
+solution041 = last . filter pandigital . takeWhile (<= 7654321) $ intPrimes

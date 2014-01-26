@@ -8,183 +8,48 @@ maintainer:          guillaume@nargeot.com
 copyright:           (c) Guillaume Nargeot 2014
 category:            Algorithms
 build-type:          Simple
-cabal-version:       >=1.8
+cabal-version:       >=1.9.2
 
 source-repository head
   type: git
   location: git://github.com/guillaume-nargeot/project-euler-haskell.git
 
-executable problem-001
+library
   hs-source-dirs:      src
-  main-is:             Problem001.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-002
-  hs-source-dirs:      src
-  main-is:             Problem002.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-009
-  hs-source-dirs:      src
-  main-is:             Problem009.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-010
-  hs-source-dirs:      src
-  main-is:             Problem010.hs
-  build-depends:       base, primes
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-012
-  hs-source-dirs:      src
-  main-is:             Problem012.hs
-  build-depends:       base
-  ghc-options:         -W -Werror -O2
-
-executable problem-014
-  hs-source-dirs:      src
-  main-is:             Problem014.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-021
-  hs-source-dirs:      src
-  main-is:             Problem021.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-024
-  hs-source-dirs:      src
-  main-is:             Problem024.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-025
-  hs-source-dirs:      src
-  main-is:             Problem025.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-031
-  hs-source-dirs:      src
-  main-is:             Problem031.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-033
-  hs-source-dirs:      src
-  main-is:             Problem033.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-034
-  hs-source-dirs:      src
-  main-is:             Problem034.hs
-  build-depends:       base, digits, memoize
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-036
-  hs-source-dirs:      src
-  main-is:             Problem036.hs
-  build-depends:       base, digits
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-038
-  hs-source-dirs:      src
-  main-is:             Problem038.hs
-  build-depends:       base, digits
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-041
-  hs-source-dirs:      src
-  main-is:             Problem041.hs
-  build-depends:       base, digits, primes
-  ghc-options:         -W -Werror -O2
-
-executable problem-043
-  hs-source-dirs:      src
-  main-is:             Problem043.hs
-  build-depends:       base, digits
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-052
-  hs-source-dirs:      src
-  main-is:             Problem052.hs
-  build-depends:       base, digits
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-055
-  hs-source-dirs:      src
-  main-is:             Problem055.hs
-  build-depends:       base, digits
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-057
-  hs-source-dirs:      src
-  main-is:             Problem057.hs
-  build-depends:       base, digits
-  ghc-options:         -Wall -Werror -O2
-
--- executable problem-064
---  hs-source-dirs:      src
---  main-is:             Problem064.hs
---  build-depends:       base
---  ghc-options:         -Wall -Werror -O2
-
-executable problem-065
-  hs-source-dirs:      src
-  main-is:             Problem065.hs
-  build-depends:       base, digits
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-070
-  hs-source-dirs:      src
-  main-is:             Problem070.hs
-  build-depends:       base, digits, NumberSieves
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-071
-  hs-source-dirs:      src
-  main-is:             Problem071.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-072
-  hs-source-dirs:      src
-  main-is:             Problem072.hs
-  build-depends:       base, NumberSieves
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-073
-  hs-source-dirs:      src
-  main-is:             Problem073.hs
-  build-depends:       base
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-074
-  hs-source-dirs:      src
-  main-is:             Problem074.hs
-  build-depends:       base, containers, digits, memoize
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-092
-  hs-source-dirs:      src
-  main-is:             Problem092.hs
-  build-depends:       base, digits
-  ghc-options:         -Wall -Werror -O2
-
-executable problem-214
-  hs-source-dirs:      src
-  main-is:             Problem214.hs
-  build-depends:       base, NumberSieves, primes
-  ghc-options:         -Wall -Werror -O2
+  build-depends:       base, containers, digits, memoize, primes, NumberSieves
+  exposed-modules:     ProjectEuler.Problem001,
+                       ProjectEuler.Problem002,
+                       ProjectEuler.Problem009,
+                       ProjectEuler.Problem010,
+                       ProjectEuler.Problem012,
+                       ProjectEuler.Problem014,
+                       ProjectEuler.Problem021,
+                       ProjectEuler.Problem024,
+                       ProjectEuler.Problem025,
+                       ProjectEuler.Problem031,
+                       ProjectEuler.Problem033,
+                       ProjectEuler.Problem034,
+                       ProjectEuler.Problem036,
+                       ProjectEuler.Problem038,
+                       ProjectEuler.Problem041,
+                       ProjectEuler.Problem043,
+                       ProjectEuler.Problem052,
+                       ProjectEuler.Problem055,
+                       ProjectEuler.Problem057,
+                       ProjectEuler.Problem065,
+                       ProjectEuler.Problem070,
+                       ProjectEuler.Problem071,
+                       ProjectEuler.Problem072,
+                       ProjectEuler.Problem073,
+                       ProjectEuler.Problem074,
+                       ProjectEuler.Problem092,
+                       ProjectEuler.Problem214
 
 test-suite test-all
   hs-source-dirs:      src, test
   type:                exitcode-stdio-1.0
   main-is:             TestAll.hs
-  build-depends:       base, HUnit, Cabal >= 1.9.2
+  build-depends:       base, containers, digits, memoize, primes, NumberSieves, HUnit, Cabal >= 1.9.2
+  ghc-options:         -Wall -O2
+-- cannot used -Werror because of problems 012 and 041
 

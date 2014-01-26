@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem025 (solution025) where
 
 import Util
 import Data.List
@@ -9,8 +9,5 @@ digitsCount = length . show
 hasThousandDigits :: Show a => a -> Bool
 hasThousandDigits = (== 1000) . digitsCount
 
-solution :: Int
-solution = head $ findIndices hasThousandDigits fibs
-
-main :: IO ()
-main = print solution
+solution025 :: Int
+solution025 = head $ findIndices hasThousandDigits fibs

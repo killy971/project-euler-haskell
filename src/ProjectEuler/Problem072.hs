@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem072 (solution072) where
 
 import Control.Monad
 import Math.Sieve.Phi
@@ -6,8 +6,5 @@ import Math.Sieve.Phi
 genericSolution :: Integer -> Integer
 genericSolution = sum . ap (map . phi . sieve) (enumFromTo 2)
 
-solution :: Integer
-solution = genericSolution 1000000
-
-main :: IO ()
-main = print solution
+solution072 :: Integer
+solution072 = genericSolution 1000000

@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem071 (solution071) where
 
 import Data.Ratio
 
@@ -12,8 +12,5 @@ genericSolution target maxDen = loop initNum initDen 0
               | otherwise = loop num (den + 1) closest
                   where nextNum = num + 1
 
-solution :: Integer
-solution = genericSolution (3 % 7) 1000000
-
-main :: IO ()
-main = print solution
+solution071 :: Integer
+solution071 = genericSolution (3 % 7) 1000000

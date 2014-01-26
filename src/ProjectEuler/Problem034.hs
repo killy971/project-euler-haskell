@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem034 (solution034) where
 
 import Control.Monad
 import Data.Digits
@@ -14,8 +14,5 @@ equalToSumOfDigitsFactorials = ap (==) (sum . map mFact . digits 10)
 genericSolution :: Integer -> Integer
 genericSolution = sum . filter equalToSumOfDigitsFactorials . enumFromTo 10
 
-solution :: Integer
-solution = genericSolution 100000
-
-main :: IO ()
-main = print solution
+solution034 :: Integer
+solution034 = genericSolution 100000

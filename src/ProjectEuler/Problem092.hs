@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem092 (solution092) where
 
 import Data.Digits
 import Util
@@ -16,8 +16,5 @@ chainEndsWith x =
 genericSolution :: Integer-> Int
 genericSolution = length . filter (== 89) . map chainEndsWith . enumFromTo 1
 
-solution :: Int
-solution = genericSolution 10000000
-
-main :: IO ()
-main = print solution
+solution092 :: Int
+solution092 = genericSolution 10000000

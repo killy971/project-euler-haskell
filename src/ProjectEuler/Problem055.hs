@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem055 (solution055) where
 
 import Control.Monad
 import Data.Digits
@@ -17,8 +17,5 @@ isLychrel = all (not . isDecPalindrome) . take 50 . tail . iterate next
 genericSolution :: Integer -> Int
 genericSolution n = length $ filter isLychrel [1..n]
 
-solution :: Int
-solution = genericSolution 10000
-
-main :: IO ()
-main = print solution
+solution055 :: Int
+solution055 = genericSolution 10000

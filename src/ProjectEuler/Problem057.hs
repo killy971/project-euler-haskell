@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem057 (solution057) where
 
 import Data.Digits
 import Data.Ratio
@@ -17,8 +17,5 @@ numeratorHasMoreDigitsThanDenominator x =
 genericSolution :: Int -> Int
 genericSolution = length . filter numeratorHasMoreDigitsThanDenominator . piExpansions
 
-solution :: Int
-solution = genericSolution 1000
-
-main :: IO ()
-main = print solution
+solution057 :: Int
+solution057 = genericSolution 1000

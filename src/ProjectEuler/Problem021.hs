@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem021 (solution021) where
 
 isDivisor :: Integer -> Integer -> Bool
 isDivisor x d = rem x d == 0
@@ -14,8 +14,5 @@ amicalNumber a = a /= b && a == sumB
 genericSolution :: Integer -> Integer
 genericSolution n = sum $ filter amicalNumber [1..n]
 
-solution :: Integer
-solution = genericSolution 10000
-
-main :: IO ()
-main = print solution
+solution021 :: Integer
+solution021 = genericSolution 10000

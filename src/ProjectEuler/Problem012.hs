@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem012 (solution012) where
 
 triangleNumbers :: [Integer]
 triangleNumbers = 0 : zipWith (+) triangleNumbers [1..]
@@ -15,8 +15,5 @@ divisorsCount x = fromIntegral . (* 2) . length $ filter (isDivisor x) [1..intSq
 genericSolution :: Integer -> Integer
 genericSolution n = head $ filter ((> n) . divisorsCount) triangleNumbers
 
-solution :: Integer
-solution = genericSolution 500
-
-main :: IO ()
-main = print solution
+solution012 :: Integer
+solution012 = genericSolution 500

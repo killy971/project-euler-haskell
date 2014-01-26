@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem052 (solution052) where
 
 import Data.Digits
 import Data.List
@@ -11,8 +11,5 @@ allEqual (x:xs) = all (== x) xs
 sameDigits :: Integer -> Bool
 sameDigits = allEqual . map (sort . digits 10) . flip map [2..6] . (*)
 
-solution :: Integer
-solution = (head . filter sameDigits) ints
-
-main :: IO ()
-main = print solution
+solution052 :: Integer
+solution052 = head . filter sameDigits $ ints

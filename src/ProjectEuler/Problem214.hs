@@ -1,4 +1,4 @@
-module Main where
+module ProjectEuler.Problem214 (solution214) where
 
 import Data.Numbers.Primes
 import Math.Sieve.Phi
@@ -16,8 +16,5 @@ phiChainLength = toInteger . length . phiChain
 genericSolution :: [Integer] -> Integer
 genericSolution = sum . filter (\x -> 25 == phiChainLength x)
 
-solution :: Integer
-solution = genericSolution $ takeWhile (<= 40000000) primes
-
-main :: IO ()
-main = print solution
+solution214 :: Integer
+solution214 = genericSolution $ takeWhile (<= 40000000) primes
