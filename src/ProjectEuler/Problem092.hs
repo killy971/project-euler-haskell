@@ -13,8 +13,8 @@ chainEndsWith x =
             then next
             else chainEndsWith next
 
-genericSolution :: Integer-> Int
-genericSolution = length . filter (== 89) . map chainEndsWith . enumFromTo 1
+genericSolution :: Integer-> Integer
+genericSolution = toInteger . length . filter (== 89) . map chainEndsWith . enumFromTo 1
 
-solution092 :: Int
+solution092 :: Integer
 solution092 = genericSolution 10000000

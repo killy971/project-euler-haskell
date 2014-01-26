@@ -14,8 +14,8 @@ numeratorHasMoreDigitsThanDenominator :: Ratio Integer -> Bool
 numeratorHasMoreDigitsThanDenominator x =
     length (digits 10 $ numerator x) > length (digits 10 $ denominator x)
 
-genericSolution :: Int -> Int
-genericSolution = length . filter numeratorHasMoreDigitsThanDenominator . piExpansions
+genericSolution :: Int -> Integer
+genericSolution = toInteger . length . filter numeratorHasMoreDigitsThanDenominator . piExpansions
 
-solution057 :: Int
+solution057 :: Integer
 solution057 = genericSolution 1000

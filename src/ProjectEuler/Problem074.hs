@@ -28,8 +28,8 @@ dfsChain n = n : takeWhile (/= n) (tail $ iterate mDigitsFactSum n)
 dfsChainLength :: Integer -> Int
 dfsChainLength = length . takeWhileUniq . dfsChain
 
-genericSolution :: Integer -> Int
-genericSolution = length . filter (== 60) . map dfsChainLength . enumFromTo 1
+genericSolution :: Integer -> Integer
+genericSolution = toInteger . length . filter (== 60) . map dfsChainLength . enumFromTo 1
 
-solution074 :: Int
+solution074 :: Integer
 solution074 = genericSolution 1000000

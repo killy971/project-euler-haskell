@@ -14,8 +14,8 @@ isLychrel :: Integer -> Bool
 isLychrel = all (not . isDecPalindrome) . take 50 . tail . iterate next
     where next = ap (+) reverseInteger
 
-genericSolution :: Integer -> Int
-genericSolution n = length $ filter isLychrel [1..n]
+genericSolution :: Integer -> Integer
+genericSolution n = toInteger $ length $ filter isLychrel [1..n]
 
-solution055 :: Int
+solution055 :: Integer
 solution055 = genericSolution 10000

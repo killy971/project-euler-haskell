@@ -45,6 +45,12 @@ library
                        ProjectEuler.Problem092,
                        ProjectEuler.Problem214
 
+executable problem
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  build-depends:       base, containers, digits, memoize, primes, NumberSieves
+  ghc-options:         -Wall -Werror -O2
+
 test-suite test-all
   hs-source-dirs:      src, test
   type:                exitcode-stdio-1.0
