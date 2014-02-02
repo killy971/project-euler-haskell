@@ -7,7 +7,7 @@ Haskell solutions for problems 1, 2, 9-10, 12, 14, 21, 24-25, 31, 33-34, 36, 38,
 
 Use the following command line to run a solution:
 ```bash
-cabal run 65
+cabal run [number]
 ```
 
 Example:
