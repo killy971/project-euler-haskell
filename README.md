@@ -10,10 +10,10 @@ Use the following command line to run a solution:
 cabal run [number]
 ```
 
-Example:
+Example for solving problem 72:
 
 ```bash
-$ cabal run 072
+$ cabal run 72
 Preprocessing executable 'problem' for project-euler-0.1.0.0...
 303963552391
 ```
