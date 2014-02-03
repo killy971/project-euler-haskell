@@ -72,7 +72,7 @@ main = do
         ["-h"] -> usage >> exit
         [number] -> case solution (read number :: Integer) of
             Just result -> print result
-            Nothing -> usage
+            Nothing -> putStrLn "There is no solution yet for this problem"
         _ -> usage >> exit
     where
         usage = putStrLn "Usage: cabal run problem [number]"
