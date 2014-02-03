@@ -27,43 +27,41 @@ import ProjectEuler.Problem072
 import ProjectEuler.Problem073
 import ProjectEuler.Problem074
 import ProjectEuler.Problem092
--- import ProjectEuler.Problem187
 import ProjectEuler.Problem214
 import System.Environment (getArgs)
 import System.Exit (exitWith, ExitCode(ExitSuccess))
 
-solutions :: M.Map String Integer
+solutions :: M.Map Integer Integer
 solutions = M.fromList [
-    ("001", solution001),
-    ("002", solution002),
-    ("009", solution009),
-    ("010", solution010),
-    ("012", solution012),
-    ("014", solution014),
-    ("021", solution021),
-    ("024", solution024),
-    ("025", solution025),
-    ("031", solution031),
-    ("033", solution033),
-    ("034", solution034),
-    ("036", solution036),
-    ("038", solution038),
-    ("041", solution041),
-    ("043", solution043),
-    ("052", solution052),
-    ("055", solution055),
-    ("057", solution057),
-    ("065", solution065),
-    ("070", solution070),
-    ("071", solution071),
-    ("072", solution072),
-    ("073", solution073),
-    ("074", solution074),
-    ("092", solution092),
-    -- ("187", solution187),
-    ("214", solution214)]
+    (1, solution001),
+    (2, solution002),
+    (9, solution009),
+    (10, solution010),
+    (12, solution012),
+    (14, solution014),
+    (21, solution021),
+    (24, solution024),
+    (25, solution025),
+    (31, solution031),
+    (33, solution033),
+    (34, solution034),
+    (36, solution036),
+    (38, solution038),
+    (41, solution041),
+    (43, solution043),
+    (52, solution052),
+    (55, solution055),
+    (57, solution057),
+    (65, solution065),
+    (70, solution070),
+    (71, solution071),
+    (72, solution072),
+    (73, solution073),
+    (74, solution074),
+    (92, solution092),
+    (214, solution214)]
 
-solution ::  String -> Maybe Integer
+solution :: Integer -> Maybe Integer
 solution number = M.lookup number solutions
 
 main :: IO ()
@@ -72,8 +70,7 @@ main = do
     case args of
         ["--help"] -> usage >> exit
         ["-h"] -> usage >> exit
-        -- [number] -> print $ solution number
-        [number] -> case solution number of
+        [number] -> case solution (read number :: Integer) of
             Just result -> print result
             Nothing -> usage
         _ -> usage >> exit
