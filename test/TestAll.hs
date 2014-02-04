@@ -68,6 +68,6 @@ tests = "All" ~: [
 main :: IO Counts
 main = do
     cnt <- runTestTT (test [tests])
-    if (errors cnt + failures cnt == 0)
+    if errors cnt + failures cnt == 0
         then exitSuccess
         else exitFailure

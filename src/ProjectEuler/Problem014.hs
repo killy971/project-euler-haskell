@@ -10,8 +10,8 @@ next n = if odd n
 collatzLength :: Integer -> Integer
 collatzLength start = collatzLength' start 2
     where collatzLength' n result = if n == 1
-		then result
-		else collatzLength' (next n) (result + 1)
+           then result
+           else collatzLength' (next n) (result + 1)
 
 solution014 :: Integer
 solution014 = 1 + findIndexBy (>) (map collatzLength [1..1000000])

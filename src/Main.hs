@@ -30,7 +30,7 @@ import ProjectEuler.Problem074
 import ProjectEuler.Problem092
 import ProjectEuler.Problem214
 import System.Environment (getArgs)
-import System.Exit (exitWith, ExitCode(ExitSuccess))
+import System.Exit (exitSuccess)
 
 solutions :: M.Map Integer Integer
 solutions = M.fromList [
@@ -70,12 +70,11 @@ main :: IO ()
 main = do
     args <- getArgs
     case args of
-        ["--help"] -> usage >> exit
-        ["-h"] -> usage >> exit
+        ["--help"] -> usage >> exitSuccess
+        ["-h"] -> usage >> exitSuccess
         [number] -> case solution (read number :: Integer) of
             Just result -> print result
             Nothing -> putStrLn "There is no solution yet for this problem"
-        _ -> usage >> exit
+        _ -> usage >> exitSuccess
     where
         usage = putStrLn "Usage: cabal run problem [number]"
-        exit = exitWith ExitSuccess

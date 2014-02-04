@@ -8,7 +8,7 @@ import Util
 next :: (Integer, Integer, Integer, Integer) -> (Integer, Integer, Integer, Integer)
 next (m, d, a, s) = (nextM, nextD, nextA, s)
     where nextM = d * a - m
-          nextD = quot (s - (nextM * nextM))  d
+          nextD = quot (s - (nextM * nextM)) d
           nextA = quot (integerSquareRoot s + nextM) nextD
 
 initTuple :: Integer -> (Integer, Integer, Integer, Integer)
