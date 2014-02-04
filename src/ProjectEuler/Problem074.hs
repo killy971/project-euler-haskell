@@ -3,15 +3,6 @@ module ProjectEuler.Problem074 (solution074) where
 import Data.Digits
 import Data.Function.Memoize
 import Util
-import qualified Data.Set as Set
-
-takeWhileUniq :: Ord a => [a] -> [a]
-takeWhileUniq [] = []
-takeWhileUniq (x:xs) = x : takeWhileUniq' (Set.singleton x) xs
-    where takeWhileUniq' _ [] = []
-          takeWhileUniq' set (y:ys) = if Set.member y set
-              then []
-              else y : takeWhileUniq' (Set.insert y set) ys
 
 mFact :: Integer -> Integer
 mFact = memoize fact

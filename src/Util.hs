@@ -2,6 +2,7 @@ module Util where
 
 import Data.List (delete, tails, transpose)
 import Data.Ratio
+import qualified Data.Set as Set
 
 ints :: (Enum t, Num t) => [t]
 ints = [1..]
@@ -49,6 +50,14 @@ takeUntil :: (a -> Bool) -> [a] -> [a]
 takeUntil _ [] = []
 takeUntil p (x:xs) | p x = [x]
                    | otherwise = x : takeUntil p xs
+
+takeWhileUniq :: Ord a => [a] -> [a]
+takeWhileUniq [] = []
+takeWhileUniq (x:xs) = x : takeWhileUniq' (Set.singleton x) xs
+    where takeWhileUniq' _ [] = []
+          takeWhileUniq' set (y:ys) = if Set.member y set
+              then []
+              else y : takeWhileUniq' (Set.insert y set) ys
 
 findIndexBy :: (Ord a) => (a -> a -> Bool) -> [a] -> Integer
 findIndexBy _ [] = error "Util.findIndexBy: empty list"
