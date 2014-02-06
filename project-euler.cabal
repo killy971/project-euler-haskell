@@ -17,12 +17,12 @@ source-repository head
 executable problem
   hs-source-dirs:      src
   main-is:             Main.hs
-  build-depends:       arithmoi, base, containers, digits, memoize, primes, NumberSieves
+  build-depends:       arithmoi, base, combinat, containers, digits, memoize, primes, NumberSieves
   ghc-options:         -Wall -Werror -O2
 
 test-suite test-all
   hs-source-dirs:      src, test
   type:                exitcode-stdio-1.0
   main-is:             TestAll.hs
-  build-depends:       arithmoi, base, containers, digits, memoize, primes, NumberSieves, HUnit, Cabal >= 1.9.2
+  build-depends:       arithmoi, base, combinat, containers, digits, memoize, primes, NumberSieves, HUnit, Cabal >= 1.9.2
   ghc-options:         -Wall -Werror -O2
