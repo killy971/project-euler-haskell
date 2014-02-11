@@ -29,6 +29,7 @@ import ProjectEuler.Problem074
 import ProjectEuler.Problem076
 import ProjectEuler.Problem077
 import ProjectEuler.Problem092
+import ProjectEuler.Problem204
 import ProjectEuler.Problem214
 import System.Exit ( exitFailure, exitSuccess )
 import Test.HUnit
@@ -64,6 +65,7 @@ tests = "All" ~: [
 	solution076 ~=? 190569291,
     solution077 ~=? 71,
     solution092 ~=? 8581146,
+    solution204 ~=? 2944730,
     solution214 ~=? 1677366278943]
     -- 4 ~=? sq 2,
     -- 5040 ~=? fact 7,
