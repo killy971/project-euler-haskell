@@ -8,7 +8,7 @@ pascal :: [[Integer]]
 pascal = iterate (map sum . clump 2 . (:) 0 . flip (++) [0]) [1]
 
 squareFree :: Integer -> Bool
-squareFree = not . any (> 1) . map length . group . primeFactors
+squareFree = all (== 1) . map length . group . primeFactors
 
 genericSolution203 :: Int -> Integer
 genericSolution203 = sum . filter squareFree . nub . concat . flip take pascal
