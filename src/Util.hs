@@ -1,6 +1,6 @@
 module Util where
 
-import Data.List (delete, tails, transpose)
+import Data.List (delete, group, tails, transpose)
 import Data.Ratio
 import qualified Data.Set as Set
 
@@ -50,6 +50,9 @@ takeUntil :: (a -> Bool) -> [a] -> [a]
 takeUntil _ [] = []
 takeUntil p (x:xs) | p x = [x]
                    | otherwise = x : takeUntil p xs
+-- the input list has to be sorted
+uniq :: Eq a => [a] -> [a]
+uniq = map head . group
 
 takeWhileUniq :: Ord a => [a] -> [a]
 takeWhileUniq [] = []
