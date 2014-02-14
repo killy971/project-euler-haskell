@@ -30,6 +30,7 @@ import ProjectEuler.Problem074
 import ProjectEuler.Problem076
 import ProjectEuler.Problem077
 import ProjectEuler.Problem092
+import ProjectEuler.Problem122
 import ProjectEuler.Problem203
 import ProjectEuler.Problem204
 import ProjectEuler.Problem214
@@ -67,6 +68,7 @@ solutions = M.fromList [
     (76, solution076),
     (77, solution077),
     (92, solution092),
+	(122, solution122),
     (203, solution203),
     (204, solution204),
     (214, solution214)]

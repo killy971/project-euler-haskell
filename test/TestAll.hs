@@ -29,6 +29,7 @@ import ProjectEuler.Problem074
 import ProjectEuler.Problem076
 import ProjectEuler.Problem077
 import ProjectEuler.Problem092
+import ProjectEuler.Problem122
 import ProjectEuler.Problem203
 import ProjectEuler.Problem204
 import ProjectEuler.Problem214
@@ -66,6 +67,7 @@ tests = "All" ~: [
 	solution076 ~=? 190569291,
     solution077 ~=? 71,
     solution092 ~=? 8581146,
+	solution122 ~=? 1582,
     solution203 ~=? 34029210557338,
     solution204 ~=? 2944730,
     solution214 ~=? 1677366278943]
