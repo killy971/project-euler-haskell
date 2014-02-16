@@ -13,6 +13,10 @@ sq x = x * x
 fpow :: Int -> (a -> a) -> a -> a
 fpow n = foldr (.) id . replicate n
 
+foldF :: [a -> a -> a] -> [a] -> a
+foldF fs (x : xs) = foldl (flip id) x $ zipWith flip fs xs
+foldF _ _ = error "Util.foldF: illegal arguments"
+
 ratioAdd :: Integral a => Ratio a -> Ratio a -> Ratio a
 ratioAdd x y =
     let nx = numerator x in
