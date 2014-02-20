@@ -1,25 +1,31 @@
 module ProjectEuler.Problem074 (solution074) where
 
 import Data.Digits
-import Data.Function.Memoize
-import Util
+import Util hiding (fact)
 
-mFact :: Integer -> Integer
-mFact = memoize fact
+fact :: Int -> Int
+fact 0 = 1
+fact 1 = 1
+fact 2 = 2
+fact 3 = 6
+fact 4 = 24
+fact 5 = 120
+fact 6 = 720
+fact 7 = 5040
+fact 8 = 40320
+fact 9 = 362880
+fact _ = error "fact n where n > 9 is not needed for this problem"
 
-digitsFactSum :: Integer -> Integer
-digitsFactSum = sum . map mFact . digits 10
+digitsFactSum :: Int -> Int
+digitsFactSum = sum . map fact . digits 10
 
-mDigitsFactSum :: Integer -> Integer
-mDigitsFactSum = memoize digitsFactSum
+dfsChain :: Int -> [Int]
+dfsChain n = n : takeWhile (/= n) (tail $ iterate digitsFactSum n)
 
-dfsChain :: Integer -> [Integer]
-dfsChain n = n : takeWhile (/= n) (tail $ iterate mDigitsFactSum n)
-
-dfsChainLength :: Integer -> Int
+dfsChainLength :: Int -> Int
 dfsChainLength = length . takeWhileUniq . dfsChain
 
-genericSolution :: Integer -> Integer
+genericSolution :: Int -> Integer
 genericSolution = toInteger . length . filter (== 60) . map dfsChainLength . enumFromTo 1
 
 solution074 :: Integer
