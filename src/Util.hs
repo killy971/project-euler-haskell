@@ -93,3 +93,12 @@ sumCombinationCount _ [] = 0
 sumCombinationCount r (c:cs) = if r < 0
     then 0
     else sumCombinationCount (r - c) (c:cs) + sumCombinationCount r cs
+
+-- Count integer partitions using Euler's pentagonal number theorem
+countPartitions :: Int -> Integer
+countPartitions = (map p' [0..] !!)
+    where p' n | n == 0 = 1
+               | otherwise = sum $ zipWith (*) (map (countPartitions . (n-)) (pent n)) $ cycle [1, 1, -1, -1]
+           where pent x = takeWhile (<= x) $ concatMap f [1..]
+                  where f k = [(m - k) `div` 2, (m + k) `div` 2]
+                         where m = 3 * k * k
