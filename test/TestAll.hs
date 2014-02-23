@@ -2,6 +2,7 @@ module Main where
 
 import ProjectEuler.Problem001
 import ProjectEuler.Problem002
+import ProjectEuler.Problem004
 import ProjectEuler.Problem009
 import ProjectEuler.Problem010
 import ProjectEuler.Problem012
@@ -41,6 +42,7 @@ tests :: Test
 tests = "All" ~: [
     solution001 ~=? 233168,
     solution002 ~=? 4613732,
+    solution004 ~=? 906609,
     solution009 ~=? 31875000,
     solution010 ~=? 142913828922,
     solution012 ~=? 76576500,
