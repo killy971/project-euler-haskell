@@ -22,4 +22,4 @@ Preprocessing executable 'problem' for project-euler-0.1.0.0...
 
 Solutions for other problems implemented in different languages are availabe in the following repository: http://github.com/guillaume-nargeot/project-euler
 
-<img src="http://projecteuler.net/profile/killy971.png"/>
+<img src="https://projecteuler.net/profile/killy971.png"/>
