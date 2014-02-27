@@ -14,7 +14,7 @@ collatzLength start = collatzLength' start 2
            else collatzLength' (next n) (result + 1)
 
 genericSolution014 :: Int -> Integer
-genericSolution014 = toInteger . (+ 1) . findIndexBy (>) . map collatzLength . enumFromTo 1
+genericSolution014 = (+ 1) . findIndexBy (>) . map collatzLength . enumFromTo 1
 
 solution014 :: Integer
 solution014 = genericSolution014 1000000

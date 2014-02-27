@@ -1,6 +1,7 @@
 module Util where
 
-import Data.List (delete, group, tails, transpose)
+import Data.List (delete, maximumBy, group, tails, transpose)
+import Data.Ord
 import Data.Ratio
 import qualified Data.Set as Set
 
@@ -34,7 +35,7 @@ ratioDiv x y =
     (nx * dy) % (dx * ny)
 
 fact :: (Enum a, Num a) => a -> a
-fact = product . enumFromTo 1
+fact n = product [1..n]
 
 fibs :: [Integer]
 fibs = 0 : scanl (+) 1 fibs
@@ -66,6 +67,9 @@ takeWhileUniq (x:xs) = x : takeWhileUniq' (Set.singleton x) xs
           takeWhileUniq' set (y:ys) = if Set.member y set
               then []
               else y : takeWhileUniq' (Set.insert y set) ys
+
+indexOfMax :: (Ord a) => [a] -> Integer
+indexOfMax = fst . maximumBy (comparing snd) . zip [0..]
 
 findIndexBy :: (Ord a) => (a -> a -> Bool) -> [a] -> Integer
 findIndexBy _ [] = error "Util.findIndexBy: empty list"
