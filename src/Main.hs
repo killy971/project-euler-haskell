@@ -36,6 +36,7 @@ import ProjectEuler.Problem122
 import ProjectEuler.Problem203
 import ProjectEuler.Problem204
 import ProjectEuler.Problem214
+import ProjectEuler.Problem225
 import System.Environment (getArgs)
 import System.Exit (exitSuccess)
 
@@ -75,7 +76,8 @@ solutions = M.fromList [
 	(122, solution122),
     (203, solution203),
     (204, solution204),
-    (214, solution214)]
+    (214, solution214),
+    (225, solution225)]
 
 solution :: Integer -> Maybe Integer
 solution number = M.lookup number solutions

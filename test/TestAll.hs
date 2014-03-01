@@ -35,6 +35,7 @@ import ProjectEuler.Problem122
 import ProjectEuler.Problem203
 import ProjectEuler.Problem204
 import ProjectEuler.Problem214
+import ProjectEuler.Problem225
 import System.Exit ( exitFailure, exitSuccess )
 import Test.HUnit
 
@@ -76,7 +77,8 @@ tests = "All" ~: [
     solution122 ~=? 1582,
     solution203 ~=? 34029210557338,
     solution204 ~=? 2944730,
-    solution214 ~=? 1677366278943]
+    solution214 ~=? 1677366278943,
+    solution225 ~=? 2009]
 
 main :: IO Counts
 main = do

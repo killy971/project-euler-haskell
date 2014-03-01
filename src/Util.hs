@@ -40,6 +40,9 @@ fact n = product [1..n]
 fibs :: [Integer]
 fibs = 0 : scanl (+) 1 fibs
 
+tribs :: [Integer]
+tribs = 1 : 1 : 1 : zipWith (+) tribs (tail $ zipWith (+) tribs (tail tribs))
+
 interleave :: [[a]] -> [a]
 interleave = concat . transpose
 
