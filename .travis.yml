@@ -1,3 +1,17 @@
 language: haskell
-#script:
-#  - cabal configure --enable-tests --enable-library-coverage && cabal build && cabal test
+
+before_install:
+  - git clone https://github.com/guillaume-nargeot/hpc-coveralls.git
+  - cd hpc-coveralls
+#  - cabal install
+  - chmod +x hpc-coveralls.sh
+  - chmod +x dummy-success-exit-script.sh
+  - cd ..
+
+script:
+  - cabal configure --enable-tests --enable-library-coverage
+  - cabal build
+  - cabal test && hpc-coveralls/dummy-success-exit-script.sh
+
+after_script:
+  - hpc-coveralls/hpc-coveralls.sh 
