@@ -6,7 +6,6 @@ before_install:
 #  - cabal install
   - chmod +x run-cabal-test.sh
   - chmod +x hpc-coveralls.sh
-  - chmod +x dummy-success-exit-script.sh
   - cd ..
 
 script:
