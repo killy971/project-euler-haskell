@@ -4,6 +4,7 @@ import qualified Data.Map as M
 import ProjectEuler.Problem001
 import ProjectEuler.Problem002
 import ProjectEuler.Problem004
+import ProjectEuler.Problem008
 import ProjectEuler.Problem009
 import ProjectEuler.Problem010
 import ProjectEuler.Problem012
@@ -45,6 +46,7 @@ solutions = M.fromList [
     (1, solution001),
     (2, solution002),
     (4, solution004),
+    (8, solution008),
     (9, solution009),
     (10, solution010),
     (12, solution012),
