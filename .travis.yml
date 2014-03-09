@@ -3,7 +3,7 @@ language: haskell
 before_install:
   - git clone https://github.com/guillaume-nargeot/hpc-coveralls.git
   - cd hpc-coveralls
-#  - cabal install
+  - cabal install
   - chmod +x run-cabal-test.sh
   - chmod +x hpc-coveralls.sh
   - cd ..
