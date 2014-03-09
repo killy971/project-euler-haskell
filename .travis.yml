@@ -7,10 +7,10 @@ before_install:
   - chmod +x run-cabal-test.sh
   - chmod +x hpc-coveralls.sh
   - cd ..
-  - cabal install hlint
+  - sudo apt-get -q -y install hlint || cabal install hlint
 
 script:
-  - hlint src/
+  - hlint . --ignore="Parse error"
   - cabal configure --enable-tests --enable-library-coverage
   - cabal build
   - hpc-coveralls/run-cabal-test.sh
