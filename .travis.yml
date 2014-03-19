@@ -16,4 +16,4 @@ script:
   - hpc-coveralls/run-cabal-test.sh
 
 after_script:
-  - hpc-coveralls/hpc-coveralls.sh project-euler-0.1.0.0
+  - hpc-coveralls/hpc-coveralls.sh test-all
