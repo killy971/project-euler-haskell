@@ -4,7 +4,6 @@ before_install:
   - git clone https://github.com/guillaume-nargeot/hpc-coveralls.git
   - cd hpc-coveralls
   - cabal install
-  - chmod +x run-cabal-test.sh hpc-coveralls.sh
   - cd ..
   - sudo apt-get -q -y install hlint || cabal install hlint
 
