@@ -14,4 +14,4 @@ script:
   - hpc-coveralls/run-cabal-test.sh --show-details=always
 
 after_script:
-  - hpc-coveralls/hpc-coveralls.sh test-all
+  - hpc-coveralls test-all
