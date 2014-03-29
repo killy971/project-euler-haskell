@@ -11,7 +11,7 @@ script:
   - hlint . --ignore="Parse error"
   - cabal configure --enable-tests --enable-library-coverage
   - cabal build
-  - hpc-coveralls/run-cabal-test.sh --show-details=always
+  - run-cabal-test --show-details=always
 
 after_script:
   - hpc-coveralls test-all
