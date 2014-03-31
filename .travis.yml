@@ -1,9 +1,7 @@
 language: haskell
 
 before_install:
-  - git clone https://github.com/guillaume-nargeot/hpc-coveralls.git
-  - cd hpc-coveralls
-  - cabal install
+  - cabal install hpc-coveralls
   - cd ..
   - sudo apt-get -q -y install hlint || cabal install hlint
 
