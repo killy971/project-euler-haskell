@@ -2,8 +2,24 @@ module-template: ! 'module MODULE_NAME where
 
 '
 extensions: {}
-environment: default
+environment: ghc-7.4.2-stable-13.09
 cabal-file: project.cabal
+hidden-packages: ''
 version: 1
+extra-packages: ! 'Hackage: NumberSieves 0.1.2
+
+  Hackage: primes 0.2.1.0
+
+  Hackage: primitive 0.5.2.1
+
+  Hackage: random 1.0.1.1
+
+  Hackage: tf-random 0.4
+
+  Hackage: QuickCheck 2.7.3
+
+  Hackage: digits 0.2
+
+  Hackage: memoize 0.6'
 ghc-args: []
 excluded-modules: []
