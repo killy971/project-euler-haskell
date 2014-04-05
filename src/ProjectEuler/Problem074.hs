@@ -1,34 +1,31 @@
 module ProjectEuler.Problem074 (solution074) where
 
 import Data.Digits
-import Data.Function.Memoize
-import Util
-import qualified Data.Set as Set
+import Util hiding (fact)
 
-takeWhileUniq :: Ord a => [a] -> [a]
-takeWhileUniq [] = []
-takeWhileUniq (x:xs) = x : takeWhileUniq' (Set.singleton x) xs
-    where takeWhileUniq' _ [] = []
-          takeWhileUniq' set (y:ys) = if Set.member y set
-              then []
-              else y : takeWhileUniq' (Set.insert y set) ys
+fact :: Int -> Int
+fact 0 = 1
+fact 1 = 1
+fact 2 = 2
+fact 3 = 6
+fact 4 = 24
+fact 5 = 120
+fact 6 = 720
+fact 7 = 5040
+fact 8 = 40320
+fact 9 = 362880
+fact _ = error "fact n where n > 9 is not needed for this problem"
 
-mFact :: Integer -> Integer
-mFact = memoize fact
+digitsFactSum :: Int -> Int
+digitsFactSum = sum . map fact . digits 10
 
-digitsFactSum :: Integer -> Integer
-digitsFactSum = sum . map mFact . digits 10
+dfsChain :: Int -> [Int]
+dfsChain n = n : takeWhile (/= n) (tail $ iterate digitsFactSum n)
 
-mDigitsFactSum :: Integer -> Integer
-mDigitsFactSum = memoize digitsFactSum
-
-dfsChain :: Integer -> [Integer]
-dfsChain n = n : takeWhile (/= n) (tail $ iterate mDigitsFactSum n)
-
-dfsChainLength :: Integer -> Int
+dfsChainLength :: Int -> Int
 dfsChainLength = length . takeWhileUniq . dfsChain
 
-genericSolution :: Integer -> Integer
+genericSolution :: Int -> Integer
 genericSolution = toInteger . length . filter (== 60) . map dfsChainLength . enumFromTo 1
 
 solution074 :: Integer

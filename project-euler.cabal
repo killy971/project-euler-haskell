@@ -5,7 +5,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Guillaume Nargeot
 maintainer:          guillaume@nargeot.com
-copyright:           (c) Guillaume Nargeot 2014
+copyright:           (c) 2014 Guillaume Nargeot
 category:            Algorithms
 build-type:          Simple
 cabal-version:       >=1.9.2
@@ -14,46 +14,15 @@ source-repository head
   type: git
   location: git://github.com/guillaume-nargeot/project-euler-haskell.git
 
-library
-  hs-source-dirs:      src
-  build-depends:       base, containers, digits, memoize, primes, NumberSieves
-  exposed-modules:     ProjectEuler.Problem001,
-                       ProjectEuler.Problem002,
-                       ProjectEuler.Problem009,
-                       ProjectEuler.Problem010,
-                       ProjectEuler.Problem012,
-                       ProjectEuler.Problem014,
-                       ProjectEuler.Problem021,
-                       ProjectEuler.Problem024,
-                       ProjectEuler.Problem025,
-                       ProjectEuler.Problem031,
-                       ProjectEuler.Problem033,
-                       ProjectEuler.Problem034,
-                       ProjectEuler.Problem036,
-                       ProjectEuler.Problem038,
-                       ProjectEuler.Problem041,
-                       ProjectEuler.Problem043,
-                       ProjectEuler.Problem052,
-                       ProjectEuler.Problem055,
-                       ProjectEuler.Problem057,
-                       ProjectEuler.Problem065,
-                       ProjectEuler.Problem070,
-                       ProjectEuler.Problem071,
-                       ProjectEuler.Problem072,
-                       ProjectEuler.Problem073,
-                       ProjectEuler.Problem074,
-                       ProjectEuler.Problem092,
-                       ProjectEuler.Problem214
-
 executable problem
   hs-source-dirs:      src
   main-is:             Main.hs
-  build-depends:       base, containers, digits, memoize, primes, NumberSieves
+  build-depends:       arithmoi, base, containers, digits, memoize, primes, NumberSieves
   ghc-options:         -Wall -Werror -O2
 
 test-suite test-all
   hs-source-dirs:      src, test
   type:                exitcode-stdio-1.0
   main-is:             TestAll.hs
-  build-depends:       base, containers, digits, memoize, primes, NumberSieves, HUnit, Cabal >= 1.9.2
+  build-depends:       arithmoi, base, containers, digits, memoize, primes, NumberSieves, HUnit, Cabal >= 1.9.2
   ghc-options:         -Wall -Werror -O2
