@@ -11,4 +11,4 @@ script:
   - run-cabal-test --show-details=always
 
 after_script:
-  - hpc-coveralls test-all
+  - hpc-coveralls --exclude-dir=test test-all
