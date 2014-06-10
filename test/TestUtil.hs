@@ -58,7 +58,7 @@ testClump = "clump" ~: [
 
 testIndexOfMax = "indexOfMax" ~: [
     indexOfMax [2] @?= 0,
-    indexOfMax [2, 3] @?= 0,
+    indexOfMax [2, 3] @?= 1,
     indexOfMax [3, 2] @?= 0,
     indexOfMax [2, 3, 5] @?= 2,
     indexOfMax [2, 5, 3] @?= 1,
