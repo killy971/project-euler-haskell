@@ -22,7 +22,7 @@ testFibs = "fibs" ~: take 8 fibs @?= [0, 1, 1, 2, 3, 5, 8, 13]
 testTribs = "tribs" ~: take 8 tribs @?= [1, 1, 1, 3, 5, 9, 17, 31]
 
 testInterleave = "interleave" ~: [
-    -- interleave [] ~=? [],
+    interleave [] @?= ([] :: [Int]),
     interleave [[2]] @?= [2],
     interleave [[2, 3]] @?= [2, 3],
     interleave [[2], [3]] @?= [2, 3],
@@ -44,8 +44,7 @@ testIsPalindrome = "isPalindrome" ~: [
     isPalindrome "abb" @?= False,
     isPalindrome "abc" @?= False]
 
-testClump = "clump"~: [
-    -- clump 0 [] @?= []]
+testClump = "clump" ~: [
     clump 1 [2] @?= [[2]],
     clump 1 [2, 3] @?= [[2], [3]],
     clump 2 [2] @?= [],
@@ -57,6 +56,20 @@ testClump = "clump"~: [
     clump 3 [2, 3, 5, 7] @?= [[2, 3, 5], [3, 5, 7]],
     clump 3 [2, 3, 5, 7, 11] @?= [[2, 3, 5], [3, 5, 7], [5, 7, 11]]]
 
+testIndexOfMax = "indexOfMax" ~: [
+    indexOfMax [2] @?= 0,
+    indexOfMax [2, 3] @?= 0,
+    indexOfMax [3, 2] @?= 0,
+    indexOfMax [2, 3, 5] @?= 2,
+    indexOfMax [2, 5, 3] @?= 1,
+    indexOfMax [5, 2, 3] @?= 0,
+    indexOfMax [5, 3, 2] @?= 0,
+    indexOfMax [3, 2, 5] @?= 2,
+    indexOfMax [3, 5, 2] @?= 1]
+
+testCountPartitions = "countPartitions" ~: [
+    map countPartitions [0..9] @?= [1,1,2,3,5,7,11,15,22,30]]
+
 testUtil = "Util" ~: [
     testSq,
     testFpow,
@@ -66,4 +79,6 @@ testUtil = "Util" ~: [
     testTribs,
     testInterleave,
     testIsPalindrome,
-    testClump]
+    testClump,
+    testIndexOfMax,
+    testCountPartitions]
