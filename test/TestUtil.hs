@@ -67,6 +67,18 @@ testIndexOfMax = "indexOfMax" ~: [
     indexOfMax [3, 2, 5] @?= 2,
     indexOfMax [3, 5, 2] @?= 1]
 
+testReversedHeads = "reversedHeads" ~: [
+    reversedHeads [2, 3, 5, 7, 11] @?= [[], [2], [3, 2], [5, 3, 2], [7, 5, 3, 2], [11, 7, 5, 3, 2]]]
+
+testCombinations = "combinations" ~: [
+    combinations 0 [] @?= ([[]] :: [[Int]]),
+    combinations 1 [] @?= ([] :: [[Int]]),
+    combinations 0 [2, 3, 5] @?= [[]],
+    combinations 1 [2, 3, 5] @?= [[2], [3], [5]],
+    combinations 2 [2, 3, 5] @?= [[2, 3], [2, 5], [3, 5]],
+    combinations 3 [2, 3, 5] @?= [[2, 3, 5]],
+    combinations 4 [2, 3, 5] @?= []]
+
 testCountPartitions = "countPartitions" ~: [
     map countPartitions [0..9] @?= [1,1,2,3,5,7,11,15,22,30]]
 
@@ -81,4 +93,6 @@ testUtil = "Util" ~: [
     testIsPalindrome,
     testClump,
     testIndexOfMax,
+    testReversedHeads,
+    testCombinations,
     testCountPartitions]
