@@ -1,7 +1,7 @@
 Haskell solutions to Project Euler 
 =====================
 
-[![Build Status](https://travis-ci.org/guillaume-nargeot/project-euler-haskell.png?branch=master)](https://travis-ci.org/guillaume-nargeot/project-euler-haskell) [![Coverage Status](https://coveralls.io/repos/guillaume-nargeot/project-euler-haskell/badge.png?branch=master)](https://coveralls.io/r/guillaume-nargeot/project-euler-haskell?branch=master)
+[![Build Status](http://img.shields.io/travis/guillaume-nargeot/project-euler-haskell/master.svg)](https://travis-ci.org/guillaume-nargeot/project-euler-haskell) [![Coverage Status](http://img.shields.io/coveralls/guillaume-nargeot/project-euler-haskell/master.svg)](https://coveralls.io/r/guillaume-nargeot/project-euler-haskell?branch=master)
 
 Haskell solutions for problems 1, 2, 4, 9-10, 12, 14, 21, 24-25, 31, 33-34, 36, 38, 41, 43, 52, 55, 57, 64-65, 70-74, 77, 92-93, 122, 203-204, 214, 225
 
