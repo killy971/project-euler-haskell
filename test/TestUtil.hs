@@ -56,6 +56,19 @@ testClump = "clump" ~: [
     clump 3 [2, 3, 5, 7] @?= [[2, 3, 5], [3, 5, 7]],
     clump 3 [2, 3, 5, 7, 11] @?= [[2, 3, 5], [3, 5, 7], [5, 7, 11]]]
 
+testUniq = "uniq" ~: [
+    uniq [] @?= ([] :: [Int]),
+    uniq [2] @?= [2],
+    uniq [2, 3] @?= [2, 3],
+    uniq [2, 2, 3] @?= [2, 3],
+    uniq [2, 3, 3] @?= [2, 3],
+    uniq [2, 2, 3, 3] @?= [2, 3],
+    uniq [2, 3, 2] @?= [2, 3, 2],
+    uniq [2, 2, 3, 2] @?= [2, 3, 2],
+    uniq [2, 3, 2, 2] @?= [2, 3, 2],
+    uniq [2, 3, 3, 2] @?= [2, 3, 2],
+    uniq [2, 2, 3, 3, 3, 5, 5, 5, 5, 5] @?= [2, 3, 5]]
+
 testIndexOfMax = "indexOfMax" ~: [
     indexOfMax [2] @?= 0,
     indexOfMax [2, 3] @?= 1,
@@ -92,6 +105,7 @@ testUtil = "Util" ~: [
     testInterleave,
     testIsPalindrome,
     testClump,
+    testUniq,
     testIndexOfMax,
     testReversedHeads,
     testCombinations,
