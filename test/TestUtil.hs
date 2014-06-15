@@ -56,6 +56,15 @@ testClump = "clump" ~: [
     clump 3 [2, 3, 5, 7] @?= [[2, 3, 5], [3, 5, 7]],
     clump 3 [2, 3, 5, 7, 11] @?= [[2, 3, 5], [3, 5, 7], [5, 7, 11]]]
 
+testTakeUntil = "takeUntil" ~: [
+    takeUntil undefined [] @?= ([] :: [Int]),
+    takeUntil odd [2] @?= [2],
+    takeUntil odd [2, 3] @?= [2, 3],
+    takeUntil odd [2, 3, 5] @?= [2, 3],
+    takeUntil even [2] @?= [2],
+    takeUntil even [2, 3] @?= [2],
+    takeUntil even [2, 3, 5] @?= [2]]
+
 testUniq = "uniq" ~: [
     uniq [] @?= ([] :: [Int]),
     uniq [2] @?= [2],
@@ -105,6 +114,7 @@ testUtil = "Util" ~: [
     testInterleave,
     testIsPalindrome,
     testClump,
+    testTakeUntil,
     testUniq,
     testIndexOfMax,
     testReversedHeads,
