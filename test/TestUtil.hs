@@ -10,9 +10,11 @@ testSq = "sq" ~: map sq [0..4] @?= [0, 1, 4, 9, 16]
 
 testFpow = "fpow" ~: [
     fpow 5 (^2) 2 @?= 2 ^ 2 ^ 5,
-    fpow 2 (++ "+") "i" @?= "i++"]
+    fpow 2 (++ "+") "i" @?= "i++",
+    fpow 0 (++ "+") "i" @?= "i"]
 
 testFoldF = "foldF" ~: [
+    foldF [] [2] @?= 2,
     foldF [(+), (*), (-)] [2, 3, 5, 7] @?= 18]
 
 testFact = "fact" ~: [map fact [0..7] @?= [1, 1, 2, 6, 24, 120, 720, 5040]]
@@ -45,6 +47,7 @@ testIsPalindrome = "isPalindrome" ~: [
     isPalindrome "abc" @?= False]
 
 testClump = "clump" ~: [
+    clump 1 [] @?= ([] :: [[Int]]),
     clump 1 [2] @?= [[2]],
     clump 1 [2, 3] @?= [[2], [3]],
     clump 2 [2] @?= [],
@@ -90,6 +93,7 @@ testIndexOfMax = "indexOfMax" ~: [
     indexOfMax [3, 5, 2] @?= 1]
 
 testReversedHeads = "reversedHeads" ~: [
+    reversedHeads [] @?= ([[]] :: [[Int]]),
     reversedHeads [2, 3, 5, 7, 11] @?= [[], [2], [3, 2], [5, 3, 2], [7, 5, 3, 2], [11, 7, 5, 3, 2]]]
 
 testCombinations = "combinations" ~: [
