@@ -92,6 +92,18 @@ testIndexOfMax = "indexOfMax" ~: [
     indexOfMax [3, 2, 5] @?= 2,
     indexOfMax [3, 5, 2] @?= 1]
 
+testFindIndexBy = "findIndexBy" ~: [
+    findIndexBy (>) [2] @=? 0,
+    findIndexBy (<) [2] @=? 0,
+    findIndexBy (<) [2, 3] @=? 0,
+    findIndexBy (<) [3, 2] @=? 1,
+    findIndexBy (<) [2, 3, 5] @=? 0,
+    findIndexBy (<) [2, 5, 3] @=? 0,
+    findIndexBy (<) [3, 2, 5] @=? 1,
+    findIndexBy (<) [5, 2, 3] @=? 1,
+    findIndexBy (<) [3, 5, 2] @=? 2,
+    findIndexBy (<) [5, 3, 2] @=? 2]
+
 testReversedHeads = "reversedHeads" ~: [
     reversedHeads [] @?= ([[]] :: [[Int]]),
     reversedHeads [2, 3, 5, 7, 11] @?= [[], [2], [3, 2], [5, 3, 2], [7, 5, 3, 2], [11, 7, 5, 3, 2]]]
@@ -121,6 +133,7 @@ testUtil = "Util" ~: [
     testTakeUntil,
     testUniq,
     testIndexOfMax,
+    testFindIndexBy,
     testReversedHeads,
     testCombinations,
     testCountPartitions]
