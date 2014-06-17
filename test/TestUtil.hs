@@ -81,6 +81,17 @@ testUniq = "uniq" ~: [
     uniq [2, 3, 3, 2] @?= [2, 3, 2],
     uniq [2, 2, 3, 3, 3, 5, 5, 5, 5, 5] @?= [2, 3, 5]]
 
+testTakeWhileUniq = "takeWhileUniq" ~: [
+    takeWhileUniq [] @?= ([] :: [Int]),
+    takeWhileUniq [2, 2] @?= [2],
+    takeWhileUniq [2, 3] @?= [2, 3],
+    takeWhileUniq [3, 3] @?= [3],
+    takeWhileUniq [2, 3, 2] @?= [2, 3],
+    takeWhileUniq [3, 2, 3] @?= [3, 2],
+    takeWhileUniq [2, 3, 5, 2] @?= [2, 3, 5],
+    takeWhileUniq [2, 3, 5, 3] @?= [2, 3, 5],
+    takeWhileUniq [2, 3, 5, 5] @?= [2, 3, 5]]
+
 testIndexOfMax = "indexOfMax" ~: [
     indexOfMax [2] @?= 0,
     indexOfMax [2, 3] @?= 1,
@@ -132,6 +143,7 @@ testUtil = "Util" ~: [
     testClump,
     testTakeUntil,
     testUniq,
+    testTakeWhileUniq,
     testIndexOfMax,
     testFindIndexBy,
     testReversedHeads,
