@@ -128,6 +128,16 @@ testCombinations = "combinations" ~: [
     combinations 3 [2, 3, 5] @?= [[2, 3, 5]],
     combinations 4 [2, 3, 5] @?= []]
 
+testSumCombinationCount = "sumCombinationCount" ~: [
+    sumCombinationCount 2 [2] @=? 1,
+    sumCombinationCount 2 [2, 3] @=? 1,
+    sumCombinationCount 3 [2, 3] @=? 1,
+    sumCombinationCount 5 [2, 3] @=? 1,
+    sumCombinationCount 6 [2, 3] @=? 2,
+    sumCombinationCount 12 [2, 3] @=? 3,
+    sumCombinationCount 5 [2, 3, 5] @=? 2,
+    sumCombinationCount 12 [2, 3, 5] @=? 5]
+
 testCountPartitions = "countPartitions" ~: [
     map countPartitions [0..9] @?= [1,1,2,3,5,7,11,15,22,30]]
 
@@ -148,4 +158,5 @@ testUtil = "Util" ~: [
     testFindIndexBy,
     testReversedHeads,
     testCombinations,
+    testSumCombinationCount,
     testCountPartitions]
