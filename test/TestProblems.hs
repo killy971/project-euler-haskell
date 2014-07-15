@@ -30,6 +30,7 @@ import ProjectEuler.Problem073
 import ProjectEuler.Problem074
 import ProjectEuler.Problem076
 import ProjectEuler.Problem077
+import ProjectEuler.Problem085
 import ProjectEuler.Problem092
 import ProjectEuler.Problem093
 import ProjectEuler.Problem122
@@ -72,6 +73,7 @@ testProblems = "Problems" ~: [
     solution074 ~=? 402,
 	solution076 ~=? 190569291,
     solution077 ~=? 71,
+    solution085 ~=? 2772,
     genericSolution092 100000 ~=? 85623,
     -- solution092 ~=? 8581146, -- slow
     solution093 ~=? 1258,
