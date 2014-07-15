@@ -5,7 +5,7 @@ ghc: 7.8
 before_install:
   - sudo apt-get -q -y install hlint || cabal install hlint
   - sudo apt-get install llvm-dev
-  - cabal install --only-dependencies --enable-tests -f -llvm
+  - cabal install --only-dependencies --enable-tests
 
 script:
   - hlint . --ignore="Parse error"
