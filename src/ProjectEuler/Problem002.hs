@@ -1,5 +1,3 @@
-{-# LANGUAGE NumDecimals #-}
-
 module ProjectEuler.Problem002 (solution002) where
 
 import Util

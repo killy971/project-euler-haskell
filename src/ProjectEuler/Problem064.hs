@@ -21,4 +21,4 @@ genericSolution064 :: Integer -> Int
 genericSolution064 = length . filter odd . map fracPeriod . filter (not . isSquare) . enumFromTo 2
 
 solution064 :: Integer
-solution064 = toInteger $ genericSolution064 10000
+solution064 = toInteger $ genericSolution064 1e4

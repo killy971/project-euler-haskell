@@ -15,4 +15,4 @@ genericSolution :: Integer -> Integer
 genericSolution n = sum $ filter amicalNumber [1..n]
 
 solution021 :: Integer
-solution021 = genericSolution 10000
+solution021 = genericSolution 1e4

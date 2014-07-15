@@ -17,4 +17,4 @@ genericSolution092 :: Integer -> Integer
 genericSolution092 = toInteger . length . filter (== 89) . map chainEndsWith . enumFromTo 1
 
 solution092 :: Integer
-solution092 = genericSolution092 10000000
+solution092 = genericSolution092 1e7

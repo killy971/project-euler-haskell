@@ -18,4 +18,4 @@ genericSolution :: Integer -> Integer
 genericSolution n = toInteger $ length $ filter isLychrel [1..n]
 
 solution055 :: Integer
-solution055 = genericSolution 10000
+solution055 = genericSolution 1e4

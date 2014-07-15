@@ -5,7 +5,7 @@ import Math.Sieve.Phi
 import Util
 
 mPhi :: Int -> Int
-mPhi = phi (sieve (40000000 :: Integer))
+mPhi = phi (sieve (4e7 :: Integer))
 
 phiChain :: Int -> [Int]
 phiChain = takeUntil (== 1) . iterate mPhi
@@ -17,4 +17,4 @@ genericSolution :: [Int] -> Integer
 genericSolution = toInteger . sum . filter (\ x -> 25 == phiChainLength x)
 
 solution214 :: Integer
-solution214 = genericSolution $ takeWhile (<= 40000000) primes
+solution214 = genericSolution $ takeWhile (<= 4e7) primes

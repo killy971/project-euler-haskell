@@ -13,4 +13,4 @@ genericSolution :: Integer -> Integer
 genericSolution n = sum $ filter isDecAndBinPalindrome [1..n]
 
 solution036 :: Integer
-solution036 = genericSolution 1000000
+solution036 = genericSolution 1e6

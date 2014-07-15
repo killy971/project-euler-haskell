@@ -15,4 +15,4 @@ genericSolution :: Integer -> Integer
 genericSolution = sum . filter equalToSumOfDigitsFactorials . enumFromTo 10
 
 solution034 :: Integer
-solution034 = genericSolution 100000
+solution034 = genericSolution 1e5

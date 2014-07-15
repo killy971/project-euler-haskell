@@ -7,4 +7,4 @@ genericSolution :: Integer -> Integer
 genericSolution = sum . ap (map . phi . sieve) (enumFromTo 2)
 
 solution072 :: Integer
-solution072 = genericSolution 1000000
+solution072 = genericSolution 1e6

@@ -6,4 +6,4 @@ genericSolution :: Integer -> Integer
 genericSolution n = sum $ takeWhile (< n) primes
 
 solution010 :: Integer
-solution010 = genericSolution 2000000
+solution010 = genericSolution 2e6

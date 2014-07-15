@@ -15,4 +15,4 @@ genericSolution204 hammingType limit =
     prodCombinationCount limit $ takeWhile (<= hammingType) primes
 
 solution204 :: Integer
-solution204 = toInteger $ genericSolution204 100 1000000000
+solution204 = toInteger $ genericSolution204 100 1e9

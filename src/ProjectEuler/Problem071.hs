@@ -13,4 +13,4 @@ genericSolution target maxDen = loop initNum initDen 0
                   where nextNum = num + 1
 
 solution071 :: Integer
-solution071 = genericSolution (3 % 7) 1000000
+solution071 = genericSolution (3 % 7) 1e6

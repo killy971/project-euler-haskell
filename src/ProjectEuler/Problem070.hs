@@ -22,4 +22,4 @@ genericSolution070 :: Integer -> Integer
 genericSolution070 = fst . foldl1 minByRatio . filter equalByPermutation . nPhiSeq . enumFromTo 2
 
 solution070 :: Integer
-solution070 = genericSolution070 10000000
+solution070 = genericSolution070 1e7

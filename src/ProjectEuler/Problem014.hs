@@ -17,4 +17,4 @@ genericSolution014 :: Int -> Integer
 genericSolution014 = (+ 1) . findIndexBy (>) . map collatzLength . enumFromTo 1
 
 solution014 :: Integer
-solution014 = genericSolution014 1000000
+solution014 = genericSolution014 1e6

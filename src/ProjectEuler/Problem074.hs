@@ -29,4 +29,4 @@ genericSolution :: Int -> Integer
 genericSolution = toInteger . length . filter (== 60) . map dfsChainLength . enumFromTo 1
 
 solution074 :: Integer
-solution074 = genericSolution 1000000
+solution074 = genericSolution 1e6
