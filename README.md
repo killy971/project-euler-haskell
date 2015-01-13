@@ -18,6 +18,7 @@ Example for solving problem 72:
 $ cabal run 72
 Preprocessing executable 'problem' for project-euler-0.1.0.0...
 303963552391
+961.09 ms
 ```
 
 # Notes

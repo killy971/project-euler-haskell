@@ -1,6 +1,10 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
 import qualified Data.Map as M
+import Formatting
+import Formatting.Clock
 import ProjectEuler.Problem001
 import ProjectEuler.Problem002
 import ProjectEuler.Problem004
@@ -41,6 +45,7 @@ import ProjectEuler.Problem214
 import ProjectEuler.Problem225
 import System.Environment (getArgs)
 import System.Exit (exitSuccess)
+import System.Clock
 
 solutions :: M.Map Integer Integer
 solutions = M.fromList [
@@ -92,9 +97,14 @@ main = do
     case args of
         ["--help"] -> usage >> exitSuccess
         ["-h"] -> usage >> exitSuccess
-        [number] -> case solution (read number :: Integer) of
-            Just result -> print result
-            Nothing -> putStrLn "There is no solution yet for this problem"
+        [number] -> do
+            let n = read number :: Integer
+            start <- getTime Monotonic
+            case solution n of
+                Just result -> print result
+                Nothing -> putStrLn "There is no solution yet for this problem"
+            end <- getTime Monotonic
+            fprint (timeSpecs % "\n") start end
         _ -> usage >> exitSuccess
     where
         usage = putStrLn "Usage: cabal run problem [number]"
