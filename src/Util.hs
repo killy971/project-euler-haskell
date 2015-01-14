@@ -1,9 +1,14 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Util where
 
 import Data.List (delete, maximumBy, group, tails, transpose)
 import Data.Ord
 import Data.Ratio
 import qualified Data.Set as Set
+import qualified Formatting as F
+import Formatting.Clock
+import System.Clock
 
 ints :: (Enum t, Num t) => [t]
 ints = [1..]
@@ -109,3 +114,10 @@ countPartitions = (map p' [0..] !!)
            where pent x = takeWhile (<= x) $ concatMap f [1..]
                   where f k = [(m - k) `div` 2, (m + k) `div` 2]
                          where m = 3 * k * k
+
+time :: a -> IO a
+time x = do
+    start <- getTime Monotonic
+    end <- x `seq` getTime Monotonic
+    F.fprint (timeSpecs F.% "\n") start end
+    return x
