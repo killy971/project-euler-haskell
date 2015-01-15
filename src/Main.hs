@@ -93,9 +93,10 @@ main = do
     case args of
         ["--help"] -> usage >> exitSuccess
         ["-h"] -> usage >> exitSuccess
-        [number] -> case solution (read number :: Integer) of
-            Just result -> time result >>= print
-            Nothing -> putStrLn "There is no solution yet for this problem"
+        [number] -> do
+            case solution (read number :: Integer) of
+                Just result -> time result >>= print
+                Nothing -> putStrLn "There is no solution yet for this problem"
         _ -> usage >> exitSuccess
     where
         usage = putStrLn "Usage: cabal run problem [number]"
