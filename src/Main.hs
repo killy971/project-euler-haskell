@@ -78,7 +78,7 @@ solutions = M.fromList [
     (85, solution085),
     (92, solution092),
     (93, solution093),
-	(122, solution122),
+    (122, solution122),
     (203, solution203),
     (204, solution204),
     (214, solution214),
