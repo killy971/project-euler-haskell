@@ -22,7 +22,7 @@ source-repository head
 executable problem
   hs-source-dirs:     src
   main-is:            Main.hs
-  build-depends:      arithmoi, base, clock, containers, digits, formatting, memoize, primes, NumberSieves
+  build-depends:      arithmoi, base, clock, containers, digits, formatting, memoize, primes
   ghc-options:        -Wall -Werror -O2
   default-extensions: NumDecimals
 
@@ -30,6 +30,6 @@ test-suite test-all
   hs-source-dirs:     src, test
   type:               exitcode-stdio-1.0
   main-is:            TestAll.hs
-  build-depends:      arithmoi, base, clock, containers, digits, formatting, memoize, primes, NumberSieves, HUnit, Cabal >= 1.9.2
+  build-depends:      arithmoi, base, clock, containers, digits, formatting, memoize, primes, HUnit, Cabal >= 1.9.2
   ghc-options:        -Wall -Werror -O2
   default-extensions: NumDecimals

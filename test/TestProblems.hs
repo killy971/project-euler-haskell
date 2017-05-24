@@ -23,9 +23,9 @@ import ProjectEuler.Problem055
 import ProjectEuler.Problem057
 import ProjectEuler.Problem064
 import ProjectEuler.Problem065
-import ProjectEuler.Problem070
+-- import ProjectEuler.Problem070
 import ProjectEuler.Problem071
-import ProjectEuler.Problem072
+-- import ProjectEuler.Problem072
 import ProjectEuler.Problem073
 import ProjectEuler.Problem074
 import ProjectEuler.Problem076
@@ -36,7 +36,7 @@ import ProjectEuler.Problem093
 import ProjectEuler.Problem122
 import ProjectEuler.Problem203
 import ProjectEuler.Problem204
-import ProjectEuler.Problem214
+-- import ProjectEuler.Problem214
 import ProjectEuler.Problem225
 import Test.HUnit
 import Util
@@ -66,10 +66,10 @@ testProblems = "Problems" ~: fmap testProblem [
     (solution057, 153),
     (solution064, 1322),
     (solution065, 272),
-    (genericSolution070 100000, 75841),
+    -- (genericSolution070 100000, 75841),
     -- solution070 ~=? 8319823, -- slow
     (solution071, 428570),
-    (solution072, 303963552391),
+    -- (solution072, 303963552391),
     (solution073, 7295372),
     (solution074, 402),
     (solution076, 190569291),
@@ -81,7 +81,7 @@ testProblems = "Problems" ~: fmap testProblem [
     (solution122, 1582),
     (solution203, 34029210557338),
     (solution204, 2944730),
-    (solution214, 1677366278943),
+    -- (solution214, 1677366278943),
     (solution225, 2009)]
 
 testProblem :: (Show a, Eq a) => (a, a) -> IO Assertion

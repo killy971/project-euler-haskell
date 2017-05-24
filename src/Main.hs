@@ -24,9 +24,9 @@ import ProjectEuler.Problem055
 import ProjectEuler.Problem057
 import ProjectEuler.Problem064
 import ProjectEuler.Problem065
-import ProjectEuler.Problem070
+--import ProjectEuler.Problem070
 import ProjectEuler.Problem071
-import ProjectEuler.Problem072
+--import ProjectEuler.Problem072
 import ProjectEuler.Problem073
 import ProjectEuler.Problem074
 import ProjectEuler.Problem076
@@ -37,7 +37,7 @@ import ProjectEuler.Problem093
 import ProjectEuler.Problem122
 import ProjectEuler.Problem203
 import ProjectEuler.Problem204
-import ProjectEuler.Problem214
+--import ProjectEuler.Problem214
 import ProjectEuler.Problem225
 import System.Environment (getArgs)
 import System.Exit (exitSuccess)
@@ -68,9 +68,9 @@ solutions = M.fromList [
     (57, solution057),
     (64, solution064),
     (65, solution065),
-    (70, solution070),
+--    (70, solution070),
     (71, solution071),
-    (72, solution072),
+--    (72, solution072),
     (73, solution073),
     (74, solution074),
     (76, solution076),
@@ -81,7 +81,7 @@ solutions = M.fromList [
     (122, solution122),
     (203, solution203),
     (204, solution204),
-    (214, solution214),
+--    (214, solution214),
     (225, solution225)]
 
 solution :: Integer -> Maybe Integer
